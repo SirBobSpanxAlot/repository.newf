@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.audio.iheart"
+       name="iHeartRadio"
+       version="0.1.1"
+       provider-name="divingmule">
+  <requires>
+    <import addon="xbmc.python" version="2.26.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+    <import addon="script.common.plugin.cache" version="2.5.6"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Live radio over the internet</summary>
+    <description>
+    Listen to more than 1,500 live radio stations from coast-to-coast including pop, country, urban, rock, talk, and college.[CR]
+    Browse radio stations by music genre and location.[CR]
+    Read more: http://news.iheart.com/about/
+    </description>
+    <platform>all</platform>
+    <language>en</language>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/divingmule/plugin.audio.iheart</source>
+    <forum>http://forum.xbmc.org/showthread.php?tid=170721</forum>
+    <website>http://iheart.com</website>
+  </extension>
+</addon>
+
+<addon id="plugin.audio.tunein2017" name="TuneIn2017" version="1.6.4" provider-name="rols1 (rols1@gmx.de)">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+    		<import addon="script.module.kodi-six" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="tunein2017.py">
+		<provides>audio</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="de">tunein.com-Addon für Kodi</summary>
+		<summary lang="en">tunein.com-addon for Kodi</summary>
+		<summary lang="es">Complemento de tunein.com para Kodi</summary>
+		<description lang="de">Favoriten und Ordner (Tunein-Account erforderlich), Download-Option mit Streamripper, Standalone-Option StartWithMyRadioStations (Beispieldatei enthalten)</description>
+		<description lang="es">Favoritos y carpetas de favoritos (se requiere cuenta en TuneIn). Opción de descarga con el programa Streamripper. Opción independiente para iniciar con Mis Emisoras de Radio (incluye archivo de muestra).</description>
+		<platform>all</platform>
+		<source>https://github.com/rols1/Kodi-Addon-TuneIn2017</source>
+		<forum>https://www.kodinerds.net/index.php/Thread/66559-RELEASE-Kodi-Addon-TuneIn2017</forum>
+		<license>The MIT License (MIT)</license>
+		<language>"de_DE"</language>
+ 		<email>rols1@gmx.de</email>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+   </extension>
+</addon>
+
 <addon id="plugin.video.discover" name="Discover" version="301.1.1" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
@@ -35,7 +90,7 @@
 	</extension>
 </addon>
 
-<addon id="repository.newf" name="Newf's Kodi Repository" version="1.0" provider-name="newf276">
+<addon id="repository.newf" name="Newf's Kodi Repository" version="1.1" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
         <dir minversion="18.0" maxversion="18.9.0">
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/leia/zips/addons.xml</info>
@@ -127,6 +182,24 @@
             <icon>icon.jpg</icon>
         </assets>
         <assets>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="screensaver.weather" name="Weather Screensaver" version="200.0" provider-name="Newf276, drinferno, rob west">
+    <requires>
+    <import addon="xbmc.python" version="2.26.0"/>
+    </requires>
+    <extension point="xbmc.ui.screensaver" library="default.py"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Weather Screensaver</summary>
+        <description lang="en">Screensaver that displays the weather.</description>
+        <platform>all</platform>
+        <license>See LICENSE.txt</license>
+        <news>vV200.0 (2021-03-01)[CR]- Kodi 18 compatable</news>
+        <assets>
+            <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
