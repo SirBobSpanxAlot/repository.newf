@@ -79,7 +79,7 @@ def update_library():  ##### TODO SPLIT UPDATE & SYNC LIBRARY(no need to sync ev
 @plugin.route('/update_players')
 @plugin.route('/update_players/<url>', name='update_players_url')
 def update_players():
-    if updater.update_players('https://github.com/newf276/Player-Files/raw/master/players.zip'): dialogs.notify(title='Discover players update', msg='Done', delay=3000, image=nav_base.get_icon_path('meta'))
+    if updater.update_players('https://github.com/newf276/Player-Files/raw/master/Meta-Players/players.zip'): dialogs.notify(title='Discover players update', msg='Done', delay=3000, image=nav_base.get_icon_path('meta'))
     else: dialogs.notify(title='Discover players update', msg='Failed', delay=3000)
 
 @plugin.route('/setup/total')
@@ -104,7 +104,7 @@ def silent_setup():
 @plugin.route('/setup/players')
 def players_setup():
     properties.set_property('running','totalmeta')
-    if updater.update_players('https://github.com/newf276/Player-Files/raw/master/players.zip'): dialogs.notify(title='Discover players setup', msg='Done', delay=3000, image=nav_base.get_icon_path('meta'))
+    if updater.update_players('https://github.com/newf276/Player-Files/raw/master/Meta-Players/players.zip'): dialogs.notify(title='Discover players setup', msg='Done', delay=3000, image=nav_base.get_icon_path('meta'))
     else: dialogs.notify(title='Discover players setup', msg='Failed', delay=3000)
     properties.clear_property('running')
     return True
