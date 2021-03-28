@@ -57,8 +57,8 @@ def get_cache_size():
         (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.numbersbynumbers', 'cache.providers.13.db')),
         (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'cache.db')),
         (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'meta.db')),
-        (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'cache.db')),
-        (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'torrentScrape.db')),
+        (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'cache.db')),
+        (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'torrentScrape.db')),
         (os.path.join(CONFIG.ADDON_DATA, 'script.module.simplecache', 'simplecache.db'))]
     cachelist = [
         CONFIG.ADDON_DATA,
@@ -122,9 +122,9 @@ def get_cache_size():
             if CONFIG.INCLUDEGAIA == 'true':
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'cache.db'))
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'meta.db'))
-            if CONFIG.INCLUDESEREN == 'true':
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'cache.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'torrentScrape.db'))
+            if CONFIG.INCLUDEnewf == 'true':
+                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'cache.db'))
+                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'torrentScrape.db'))
             if CONFIG.INCLUDETHECREW == 'true':
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.thecrew', 'cache.db'))
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.thecrew', 'meta.5.db'))
@@ -267,8 +267,8 @@ def clear_cache(over=None):
         (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.scrubsv2', 'cache.db')),
         (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.scrubsv2', 'meta.5.db')),
         (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.scrubsv2', 'cache.providers.13.db')),
-        (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'cache.db')),
-        (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'torrentScrape.db')),
+        (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'cache.db')),
+        (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'torrentScrape.db')),
         (os.path.join(CONFIG.ADDON_DATA, 'script.module.simplecache', 'simplecache.db'))]
 
     cachelist = [
@@ -359,9 +359,9 @@ def clear_cache(over=None):
             if CONFIG.INCLUDEGAIA == 'true':
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'cache.db'))
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'meta.db'))
-            if CONFIG.INCLUDESEREN == 'true':
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'cache.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'torrentScrape.db'))
+            if CONFIG.INCLUDEnewf == 'true':
+                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'cache.db'))
+                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'torrentScrape.db'))
         if len(files) > 0:
             for item in files:
                 if os.path.exists(item):
@@ -485,8 +485,8 @@ def force_text():
 
 
 def toggle_cache(state):
-    cachelist = ['includevideo', 'includeall', 'includeexodusredux', 'includegaia', 'includenumbers', 'includescrubs', 'includeseren', 'includethecrew', 'includevenom']
-    titlelist = ['Include Video Addons', 'Include All Addons', 'Include Exodus Redux', 'Include Gaia', 'Include NuMb3r5', 'Include Scrubs v2', 'Include Seren', 'Include THE CREW', 'Include Venom']
+    cachelist = ['includevideo', 'includeall', 'includeexodusredux', 'includegaia', 'includenumbers', 'includescrubs', 'includenewf', 'includethecrew', 'includevenom']
+    titlelist = ['Include Video Addons', 'Include All Addons', 'Include Exodus Redux', 'Include Gaia', 'Include NuMb3r5', 'Include Scrubs v2', 'Include newf', 'Include THE CREW', 'Include Venom']
     if state in ['true', 'false']:
         for item in cachelist:
             CONFIG.set_setting(item, state)

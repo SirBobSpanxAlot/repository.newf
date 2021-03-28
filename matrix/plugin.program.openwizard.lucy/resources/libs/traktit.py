@@ -30,7 +30,7 @@ from resources.libs.common import logging
 from resources.libs.common import tools
 
 ORDER = ['exodusredux', 'fen', 'gaia', 'numbers', 'openmeta', 'premiumizer',
-         'realizer', 'scrubs', 'seren', 'shadow', 'thecrew', 'trakt', 'venom']
+         'realizer', 'scrubs', 'lucy', 'shadow', 'thecrew', 'trakt', 'venom']
 
 TRAKTID = {
     'gaia': {
@@ -57,18 +57,18 @@ TRAKTID = {
         'default'  : 'trakt.user',
         'data'     : ['trakt.token', 'trakt.refresh', 'trakt.user'],
         'activate' : 'RunPlugin(plugin://plugin.video.numbersbynumbers/?action=authTrakt)'},
-    'seren': {
-        'name'     : 'Seren',
-        'plugin'   : 'plugin.video.seren',
-        'saved'    : 'seren',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren', 'temp-icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.seren', 'temp-fanart.png'),
-        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'seren_trakt'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'settings.xml'),
+    'lucy': {
+        'name'     : 'lucy',
+        'plugin'   : 'plugin.video.lucy',
+        'saved'    : 'lucy',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.lucy'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.lucy', 'temp-icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.lucy', 'temp-fanart.png'),
+        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'lucy_trakt'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.lucy', 'settings.xml'),
         'default'  : 'trakt.username',
         'data'     : ['trakt.auth', 'trakt.refresh', 'trakt.username'],
-        'activate' : 'RunPlugin(plugin://plugin.video.seren/?action=authTrakt)'},
+        'activate' : 'RunPlugin(plugin://plugin.video.lucy/?action=authTrakt)'},
     'trakt': {
         'name'     : 'Trakt',
         'plugin'   : 'script.trakt',

@@ -1,53 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="context.chinook" version="1.0.2+matrix.1" name="Chinook- Global Context Menu Items" provider-name="chinook276">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-	</requires>
-	<extension point="kodi.context.item">
-        <menu id="kodi.core.main">
-            <item library="traktManager.py">
-				<label>$ADDON[context.chinook 32009]</label>
-				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.chinook/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-			</item>
-			<item library="rescrape.py">
-                <label>$ADDON[context.chinook 32004]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.chinook/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-            </item>
-			<item library="sourceSelect.py">
-                <label>$ADDON[context.chinook 32005]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.chinook/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-            </item>
-			<item library="findSimilar.py">
-                <label>$ADDON[context.chinook 32006]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.chinook/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
-            </item>
-        </menu>
-    </extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Chinook - This Addon is currently in beta. Please be aware there may be bugs present</summary>
-		<summary lang="nl">Chinook - Deze add-on is momenteel in beta. Let op: er kunnen bugs aanwezig zijn</summary>
-		<description lang="en">Adds Global Contextual Menu Items for chinook menu items throughout Kodi</description>
-		<description lang="ml">Voegt globale contextuele menu-items toe voor chinook-menu-items in Kodi</description>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<forum></forum>
-		<website></website>
-		<source></source>
-		<disclaimer lang="en"></disclaimer>
-		<assets>
-			<icon>icon.jpg</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-		<news>
-Changelog 1.0.2: Tweakedn for chinook Addon
-Fixed addon icons/fanart
-
-Changelog 2.0.0: for chinook 1.0
-		</news>
-	</extension>
-</addon>
-
 <addon id="context.lucy" version="1.0.2+matrix.1" name="lucy- Global Context Menu Items" provider-name="lucy276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
@@ -223,32 +175,7 @@ Changelog 2.0.0: for Newf 1.0
     </extension>
 </addon>
 
-<addon id="plugin.program.openwizard.chinook" name="Chinook Maintenance" version="1.2" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Chinook Maintenance</summary>
-        <description lang="en">Chinook Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/plugin.program.openwizard.chinook/</source>
-        <news> Matrix Version 1.0 - Edited for my chinook Addon
-        </news>
-        <assets>
-            <icon>icon.jpg</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="plugin.program.openwizard.lucy" name="Lucy Maintenance" version="1.2" provider-name="newf276">
+<addon id="plugin.program.openwizard.lucy" name="Lucy Maintenance" version="1.4" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -263,8 +190,8 @@ Changelog 2.0.0: for Newf 1.0
         <description lang="en">lucy Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/plugin.program.openwizard.lucy/</source>
-        <news> Matrix Version 1.0 - Edited for my lucy Addon
+        <source>https://www.github.com/newf276/plugin.program.openwizard.lucy.lucy/</source>
+        <news> Matrix Version 1.0 - Edited for my Lucy Addon
         </news>
         <assets>
             <icon>icon.jpg</icon>
@@ -273,7 +200,7 @@ Changelog 2.0.0: for Newf 1.0
     </extension>
 </addon>
 
-<addon id="plugin.program.openwizard.newf" name="Newf Maintenance" version="1.2" provider-name="newf276">
+<addon id="plugin.program.openwizard.newf" name="Newf Maintenance" version="1.4" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -284,84 +211,17 @@ Changelog 2.0.0: for Newf 1.0
     </extension>
     <extension point="xbmc.service" library="startup.py" start="startup" />
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">newf Maintenance</summary>
-        <description lang="en">newf Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <summary lang="en">Newf Maintenance</summary>
+        <description lang="en">Newf Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/plugin.program.openwizard.newf/</source>
+        <source>https://www.github.com/newf276/plugin.program.openwizard.newf.newf/</source>
         <news> Matrix Version 1.0 - Edited for my newf Addon
         </news>
         <assets>
             <icon>icon.jpg</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-    </extension>
-</addon>
-
-<addon id="plugin.video.chinook" version="1.17+matrix.1" name="Chinook" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.future" version="0.17.1"/>
-        <import addon="script.module.requests" version="2.22.0" />
-        <import addon="plugin.video.youtube" version="6.8.3"/>
-        <import addon="script.module.beautifulsoup4" version="4.6.2"/>
-        <import addon="context.chinook" version="1.0"/>
-        <import addon="script.module.inputstreamhelper" version="0.3.3"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="chinook.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.metadata">
-        <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en">Chinook - Modular Multi-source Addon</summary>
-        <description lang="en">Chinook is a modular provider based, cloud service streaming software that is tightly
-            interwoven with Trakt. Chinook provides the freedom to view media from a single menu system from service
-            providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
-        </description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <forum/>
-        <website>https://github.com/newf276/newf276.github.io</website>
-        <source>https://github.com/newf276/newf276.github.io</source>
-        <disclaimer lang="en">
-            Last updated: September 09, 2019.
-            The information contained within the chinook software (the "Service") is for general information purposes
-            only.
-            The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
-            assume responsibility for any material provided by any external services.
-            The use of the Service does not author the user to engage in any kind of illegal, criminal or tortious
-            activity through the use of the software, including infringement of any third party intellectual property
-            rights (including without limitation copyright, trade marks, patent, trade secrets and confidential
-            information), fraud, child pornography, trafficking in obscene material, violation of applicable export
-            restrictions, drug dealing, gambling, harassment, stalking, spamming, hacking, sending of viruses or other
-            harmful files or illegal posting of computer passwords or computer code.
-            The user is responsible for all their activity in connection with the use of the Service and the author
-            reserves the right to report any potentially criminal activity to appropriate law enforcement agencies.
-            The user must not transmit to or via the Service, any material that may infringe the intellectual property
-            rights of any third party, or any defamatory, derogatory or offensive material or publication.
-            In no event shall the author of this software be liable for any special, direct, indirect, consequential, or
-            incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort,
-            arising out of or in connection with the use of the Service or the contents of the Service.
-            The author reserves the right to make additions, deletions, or modification to the contents on the Service
-            at any time without prior notice.
-            The author of this software does not warrant that the software is free of viruses or other harmful
-            components.
-            chinook may contain links to external websites that are not provided or maintained by or in any way affiliated
-            with the author.
-            Please note that the author does not guarantee the accuracy, relevance, timeliness, or completeness of any
-            information on these external websites.
-        </disclaimer>
-        <assets>
-            <icon>ico-chinook-2.jpg</icon>
-            <fanart>fanart-chinook-2.jpg</fanart>
-            <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
-            <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
-            <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
-        </assets>
-        <news>
-            Changelog 1.17+matrix: Nil Initial Release
-        </news>
     </extension>
 </addon>
 
@@ -395,7 +255,7 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
 </extension>
 </addon>
 
-<addon id="plugin.video.lucy" version="1.17+matrix.1" name="Lucy" provider-name="newf276">
+<addon id="plugin.video.lucy" version="3.18+matrix.1" name="Lucy" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -462,7 +322,7 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
     </extension>
 </addon>
 
-<addon id="plugin.video.newf" version="1.17+matrix.1" name="Newf" provider-name="newf276">
+<addon id="plugin.video.newf" version="3.18+matrix.1" name="Newf" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -478,8 +338,8 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
     <extension point="xbmc.service" library="service.py"/>
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en">newf - Modular Multi-source Addon</summary>
-        <description lang="en">newf is a modular provider based, cloud service streaming software that is tightly
+        <summary lang="en">Newf - Modular Multi-source Addon</summary>
+        <description lang="en">Newf is a modular provider based, cloud service streaming software that is tightly
             interwoven with Trakt. newf provides the freedom to view media from a single menu system from service
             providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
         </description>
@@ -589,7 +449,7 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
   </extension>
 </addon>
 
-<addon id="repository.newf" name="Newf's Kodi Repository" version="1.1" provider-name="newf276">
+<addon id="repository.newf" name="Newf's Kodi Repository" version="1.3" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
         <dir minversion="18.0" maxversion="18.9.0">
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/leia/zips/addons.xml</info>
@@ -623,35 +483,10 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
 			<artdir>https://github.com/a4k-openproject/a4kSubtitles/releases/download/v0.0.13</artdir>
 		</dir>
         <dir>
-            <info compressed="false">https://diamondbuild.xyz/repository/diamond/diamond_build_repo_k19/zips/addons.xml</info>
-            <checksum>https://diamondbuild.xyz/repository/diamond/diamond_build_repo_k19/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://diamondbuild.xyz/repository/diamond/diamond_build_repo_k19/zips/</datadir>
-	   </dir>
-        <dir>
             <info compressed="false">https://github.com/host505/repository.host505/raw/master/addons.xml</info>
             <checksum>https://github.com/host505/repository.host505/raw/master/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/host505/repository.host505/master/</datadir>
         </dir>
-        <dir minversion="18.0" maxversion="18.9.0">
-			<info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/leia/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/leia/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/leia/zips/</datadir>
-		</dir>
-		<dir minversion="18.9.0">
-			<info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/matrix/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/matrix/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/matrix/zips/</datadir>
-		</dir>
-        <dir>
-			<info compressed="false">https://raw.githubusercontent.com/drinfernoo/plugin.program.autowidget/repo/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/drinfernoo/plugin.program.autowidget/repo/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/drinfernoo/plugin.program.autowidget/repo/zips/</datadir>
-		</dir>
-        <dir>
-			<info compressed="false">https://raw.githubusercontent.com/123Venom/zips/master/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/123Venom/zips/master/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/123Venom/zips/master/</datadir>
-		</dir>
         <dir>
             <info compressed="false">https://k.slyguy.xyz/.repo/addons.xml</info>
             <checksum>https://k.slyguy.xyz/.repo/addons.xml.md5</checksum>
@@ -666,6 +501,16 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
             <info compressed="false">https://raw.githubusercontent.com/johnny5-is-alive/iat-repo/master/linux-x86_64/matrix/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/johnny5-is-alive/iat-repo/master/linux-x86_64/matrix/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/johnny5-is-alive/iat-repo/master/linux-x86_64/matrix/</datadir>
+        </dir>
+        <dir minversion="18.0" maxversion="18.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/leia/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/leia/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/leia/zips/</datadir>
+        </dir>
+        <dir minversion="18.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openwizard/master/matrix/zips/</datadir>
         </dir>
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
@@ -704,7 +549,7 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
     </extension>
 </addon>
 
-<addon id="script.module.autocompletion" name="AutoCompletion library" version="10.2.2" provider-name="Philipp Temminghoff (phil65)">
+<addon id="script.module.autocompletion" name="AutoCompletion library" version="10.3.2" provider-name="Philipp Temminghoff (phil65)">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests"/>
@@ -716,39 +561,10 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE Version 2.1, February 1999</license>
         <source>https://github.com/phil65/script.module.autocompletion</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
     </extension>
-</addon>
-
-<addon id="skin.chinook" version="2.0.0+matrix.1" name="Skin-Chinook" provider-name="newf276, phil65">
-	<requires>
-		<import addon="xbmc.gui" version="5.15.0"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false">
-		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
-		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
-		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
-		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
-		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
-		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
-		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Chinook Skin by newf276</summary>
-		<summary lang="en_US">Chinook Skin by newf276</summary>
-		<description lang="en_GB">Chinook Skin is a modded Estuary version for use with chinook 2.0 or higher. It attempts to be easy for first time Kodi users to understand and use and it integarates chinook and it's Trakt Collection based on your own Trakt Account. Thank you to phil65 for his original code.</description>
-		<description lang="en_US">Chinook Skin is a modded Estuary version for use with chinook 2.0 or higher. It attempts to be easy for first time Kodi users to understand and use and it integarates chinook and it's Trakt Collection based on your own Trakt Account. Thank you to phil65 for his original code.</description>
-		<disclaimer lang="en_GB">Chinook Skin is a modded Estuary version for use with chinook 2.0 or higher. Use at your own risk</disclaimer>
-		<disclaimer lang="en_US">>Chinook Skin is a modded Estuary version for use with chinook 2.0 or higher. Use at your own risk</disclaimer>
-		<platform>all</platform>
-		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
-		<forum>http://forum.kodi.tv/</forum>
-		<source>https://newf276.github.io/</source>
-		<assets>
-			<icon>icon.jpg</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-	</extension>
 </addon>
 
 <addon id="skin.lucy" version="1.0.0+matrix.1" name="Skin-Lucy" provider-name="newf276, phil65">

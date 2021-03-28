@@ -30,7 +30,7 @@ Currently, this version of the wizard supports:
 | ResolveURL                         | [x]            |       | [x]        | [x]         | [x]        |           |      |      |      |      |           |          |                         |
 | script.module.metadatautils        | [x]            |       |            |             |            |           | [x]  |      | [x]  |      | [x]       |          |                         |
 | Scrubs v2                          | [x]            | [x]   |            |             |            |           | [x]  |      |      | [x]  | [x]       |          |                         |
-| Seren                              | [x]            | [x]   | [x]        | [x]         | [x]        | [x]       | [x]  | [x]  |      |      |           |          |                         |
+| newf                              | [x]            | [x]   | [x]        | [x]         | [x]        | [x]       | [x]  | [x]  |      |      |           |          |                         |
 | Shadow                             |                | [x]   | [x]        | [x]         | [x]        |           |      |      |      |      |           |          |                         |
 | simplecache                        | [x]            |       |            |             |            |           |      |      |      |      |           |          |                         |
 | THE CREW                           | [x]            | [x]   |            |             |            |           | [x]  |      |      | [x]  | [x]       |          |                         |

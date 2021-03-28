@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.openwizard.newf" name="Newf Maintenance" version="1.2" provider-name="newf276">
+<addon id="plugin.program.openwizard.newf" name="Newf Maintenance" version="1.4" provider-name="newf276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -10,11 +10,11 @@
     </extension>
     <extension point="xbmc.service" library="startup.py" start="startup" />
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">newf Maintenance</summary>
-        <description lang="en">newf Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <summary lang="en">Newf Maintenance</summary>
+        <description lang="en">Newf Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/plugin.program.openwizard.newf/</source>
+        <source>https://www.github.com/newf276/plugin.program.openwizard.newf.newf/</source>
         <news> Matrix Version 1.0 - Edited for my newf Addon
         </news>
         <assets>

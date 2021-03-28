@@ -157,7 +157,7 @@
                     <control type="image">
                         <top>50</top>
                         <left>10</left>
-                        <width>150</width>
+                        <width>200</width>
                         <height>200</height>
                         <aspectratio>keep</aspectratio>
     <!--                    <visible>String.IsEqual($INFO[ListItem.Property(provider.image)],)|</visible>-->

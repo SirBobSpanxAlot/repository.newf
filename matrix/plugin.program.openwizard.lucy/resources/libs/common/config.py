@@ -230,7 +230,7 @@ class Config:
         self.INCLUDEALL = self.get_setting('includeall')
         self.INCLUDEEXODUSREDUX = self.get_setting('includeexodusredux')
         self.INCLUDEGAIA = self.get_setting('includegaia')
-        self.INCLUDESEREN = self.get_setting('includeseren')
+        self.INCLUDElucy = self.get_setting('includelucy')
         self.INCLUDETHECREW = self.get_setting('includethecrew')
         self.INCLUDEYODA = self.get_setting('includeyoda')
         self.INCLUDEVENOM = self.get_setting('includevenom')

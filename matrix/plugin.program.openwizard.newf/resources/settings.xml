@@ -54,7 +54,7 @@
         <setting id="includegaia" type="bool" label="Include Gaia Cache DB: " default="true" enable="eq(-2,false)" visible="System.HasAddon(plugin.video.gaia)"/>
         <setting id="includenumbers" type="bool" label="Include NuMb3r5 Cache DB: " default="true" enable="eq(-3,false)" visible="System.HasAddon(plugin.video.numbersbynumbers)"/>
         <setting id="includescrubs" type="bool" label="Include Scrubs v2 Cache DB: " default="true" enable="eq(-4,false)" visible="System.HasAddon(plugin.video.scrubsv2)"/>
-        <setting id="includeseren" type="bool" label="Include Seren Cache DB: " default="true" enable="eq(-5,false)" visible="System.HasAddon(plugin.video.seren)"/>
+        <setting id="includenewf" type="bool" label="Include newf Cache DB: " default="true" enable="eq(-5,false)" visible="System.HasAddon(plugin.video.newf)"/>
         <setting id="includethecrew" type="bool" label="Include THE CREW Cache DB: " default="true" enable="eq(-6,false)" visible="System.HasAddon(plugin.video.thecrew)"/>
         <setting id="includevenom" type="bool" label="Include Venom Cache DB: " default="true" enable="eq(-7,false)" visible="System.HasAddon(plugin.video.venom)"/>
 
@@ -67,7 +67,7 @@
         <setting id="premiumizer" type="text" default="" visible="false"/>
         <setting id="realizer" type="text" default="" visible="false"/>
         <setting id="scrubs" type="text" default="" visible="false"/>
-        <setting id="seren" type="text" default="" visible="false"/>
+        <setting id="newf" type="text" default="" visible="false"/>
         <setting id="shadow" type="text" default="" visible="false"/>
         <setting id="thecrew" type="text" default="" visible="false"/>
         <setting id="tmdbhelper" type="text" default="" visible="false"/>
@@ -81,10 +81,10 @@
         <setting id="gaiapm" type="text" default="" visible="false"/>
         <setting id="gaiard" type="text" default="" visible="false"/>
         <setting id="pmzer" type="text" default="" visible="false"/>
-        <setting id="serenad" type="text" default="" visible="false"/>
-        <setting id="serenpm" type="text" default="" visible="false"/>
-        <setting id="serenpm-oauth" type="text" default="" visible="false"/>
-        <setting id="serenrd" type="text" default="" visible="false"/>
+        <setting id="newfad" type="text" default="" visible="false"/>
+        <setting id="newfpm" type="text" default="" visible="false"/>
+        <setting id="newfpm-oauth" type="text" default="" visible="false"/>
+        <setting id="newfrd" type="text" default="" visible="false"/>
         <setting id="rurlad" type="text" default="" visible="false"/>
         <setting id="rurlpm" type="text" default="" visible="false"/>
         <setting id="rurlrd" type="text" default="" visible="false"/>
@@ -106,7 +106,7 @@
         <setting id="fanart-realizer" type="text" default="" visible="false"/>
         <setting id="fanart-scrubs" type="text" default="" visible="false"/>
         <setting id="fanart-venom" type="text" default="" visible="false"/>
-        <setting id="fanart-seren" type="text" default="" visible="false"/>
+        <setting id="fanart-newf" type="text" default="" visible="false"/>
         <setting id="fanart-tmdbhelper" type="text" default="" visible="false"/>
         <setting id="imdb-exodusredux" type="text" default="" visible="false"/>
         <setting id="imdb-gaia" type="text" default="" visible="false"/>
@@ -138,16 +138,16 @@
         <setting id="tmdb-premiumizer" type="text" default="" visible="false"/>
         <setting id="tmdb-realizer" type="text" default="" visible="false"/>
         <setting id="tmdb-scrubs" type="text" default="" visible="false"/>
-        <setting id="tmdb-seren" type="text" default="" visible="false"/>
+        <setting id="tmdb-newf" type="text" default="" visible="false"/>
         <setting id="tmdb-tmdbhelper" type="text" default="" visible="false"/>
         <setting id="tmdb-venom" type="text" default="" visible="false"/>
         <setting id="trakt-openmeta" type="text" default="" visible="false"/>
-        <setting id="trakt-seren" type="text" default="" visible="false"/>
+        <setting id="trakt-newf" type="text" default="" visible="false"/>
         <setting id="tvdb-metahandler" type="text" default="" visible="false"/>
         <setting id="tvdb-openmeta" type="text" default="" visible="false"/>
         <setting id="tvdb-premiumizer" type="text" default="" visible="false"/>
         <setting id="tvdb-realizer" type="text" default="" visible="false"/>
-        <setting id="tvdb-seren" type="text" default="" visible="false"/>
+        <setting id="tvdb-newf" type="text" default="" visible="false"/>
         <setting id="location-yahoo" type="text" default="" visible="false"/>
         <setting id="login-youtube" type="text" default="" visible="false"/>
         <setting id="ws-wonderfulsubs" type="text" default="" visible="false"/>

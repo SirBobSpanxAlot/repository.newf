@@ -110,7 +110,7 @@ class MaintenanceMenu:
             includevenom = 'true'
             includenumbers = 'true'
             includescrubs = 'true'
-            includeseren = 'true'
+            includenewf = 'true'
         else:
             includeexodusredux = 'true' if CONFIG.INCLUDEEXODUSREDUX == 'true' else 'false'
             includegaia = 'true' if CONFIG.INCLUDEGAIA == 'true' else 'false'
@@ -119,7 +119,7 @@ class MaintenanceMenu:
             includevenom = 'true' if CONFIG.INCLUDEVENOM == 'true' else 'false'
             includenumbers = 'true' if CONFIG.INCLUDENUMBERS == 'true' else 'false'
             includescrubs = 'true' if CONFIG.INCLUDESCRUBS == 'true' else 'false'
-            includeseren = 'true' if CONFIG.INCLUDESEREN == 'true' else 'false'
+            includenewf = 'true' if CONFIG.INCLUDEnewf == 'true' else 'false'
 
         if includevid == 'true':
             directory.add_file(
@@ -142,10 +142,10 @@ class MaintenanceMenu:
                 directory.add_file(
                     '--- Include Scrubs v2: {0}'.format(includescrubs.replace('true', on).replace('false', off)),
                     {'mode': 'togglecache', 'name': 'includescrubs'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
-            if xbmc.getCondVisibility('System.HasAddon(plugin.video.seren)'):
+            if xbmc.getCondVisibility('System.HasAddon(plugin.video.newf)'):
                 directory.add_file(
-                    '--- Include Seren: {0}'.format(includeseren.replace('true', on).replace('false', off)),
-                    {'mode': 'togglecache', 'name': 'includeseren'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
+                    '--- Include newf: {0}'.format(includenewf.replace('true', on).replace('false', off)),
+                    {'mode': 'togglecache', 'name': 'includenewf'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
             if xbmc.getCondVisibility('System.HasAddon(plugin.video.thecrew)'):
                 directory.add_file(
                     '--- Include THE CREW: {0}'.format(includethecrew.replace('true', on).replace('false', off)),

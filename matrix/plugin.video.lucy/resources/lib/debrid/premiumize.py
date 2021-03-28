@@ -353,7 +353,7 @@ class Premiumize:
 
     def is_service_enabled(self):
         """
-        Check to confirm api is enabled in Seren
+        Check to confirm api is enabled in lucy
         :return:
         :rtype:
         """

@@ -779,8 +779,8 @@ class Backup:
                 (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.numbersbynumbers', 'cache.providers.13.db')),
                 (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'cache.db')),
                 (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'meta.db')),
-                (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'cache.db')),
-                (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'torrentScrape.db')),
+                (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'cache.db')),
+                (os.path.join(CONFIG.ADDON_DATA, 'plugin.video.newf', 'torrentScrape.db')),
                 (os.path.join(CONFIG.ADDON_DATA, 'script.module.simplecache', 'simplecache.db'))]
 
             for base, dirs, files in os.walk(CONFIG.ADDON_DATA):
