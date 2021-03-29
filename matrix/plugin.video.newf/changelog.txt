@@ -1,4 +1,4 @@
-Changelog 3.0.18
+Changelog 2.0.18
 Fix the thread pool issues
 Added logic to push down the country_origin to be used by the scrapers
 Original title swap now only occurs for display, use unicode everywhere

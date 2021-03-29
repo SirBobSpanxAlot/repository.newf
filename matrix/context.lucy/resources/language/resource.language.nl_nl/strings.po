@@ -1,6 +1,6 @@
 # Addon Name: lucy
 # Addon id: context.lucy
-# Addon Provider: lucy276
+# Addon Provider: Nixgates
 msgid ""
 msgstr ""
 

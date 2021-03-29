@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.osmosis" name="Osmosis" version="10.3.22+matrix.1" provider-name="Newf276, Maven">
+<addon id="plugin.video.osmosis" name="Osmosis" version="10.3.22+matrix.1" provider-name="Newf276, Maven85">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.common.plugin.cache" version="2.5.2" />
@@ -25,12 +25,11 @@
 		</forum>
 		<website>https://www.youtube.com/channel/UCFC6pKk0cshN1sG15FEO5TQ</website>
 		<email></email>
-		<source>https://github.com/stereodruid/OSMOSIS</source>
+		<source>https://github.com/Maven85/OSMOSIS</source>
 		<news></news>
 		<assets>
-			<icon>resources/media/icon.png</icon>
+			<icon>resources/media/icon.jpg</icon>
 			<fanart>resources/media/fanart.jpg</fanart>
-			<screenshot>resources/media/fanart.jpg</screenshot>
 		</assets>
 		<language>en de</language>
 		<reuselanguageinvoker>true</reuselanguageinvoker>
