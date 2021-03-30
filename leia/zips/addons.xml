@@ -97,12 +97,12 @@ Rework for newf 2.0
   </extension>
 </addon>
 
-<addon id="plugin.audio.tunein2017" name="TuneIn2017" version="1.6.4" provider-name="rols1 (rols1@gmx.de)">
+<addon id="plugin.audio.tunein2021" name="TuneIn" version="10.6.4" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
     		<import addon="script.module.kodi-six" />
 	</requires>
-	<extension point="xbmc.python.pluginsource" library="tunein2017.py">
+	<extension point="xbmc.python.pluginsource" library="tunein2021.py">
 		<provides>audio</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -115,10 +115,9 @@ Rework for newf 2.0
 		<source>https://github.com/rols1/Kodi-Addon-TuneIn2017</source>
 		<forum>https://www.kodinerds.net/index.php/Thread/66559-RELEASE-Kodi-Addon-TuneIn2017</forum>
 		<license>The MIT License (MIT)</license>
-		<language>"de_DE"</language>
- 		<email>rols1@gmx.de</email>
+		<language>"en"</language>
 		<assets>
-			<icon>icon.png</icon>
+			<icon>icon.jpg</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
    </extension>
@@ -154,7 +153,7 @@ Rework for newf 2.0
     </extension>
 </addon>
 
-<addon id="plugin.video.discover" name="Discover" version="1000.3" provider-name="Newf276">
+<addon id="plugin.video.discover" name="Discover" version="200.0.1" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
 		<import addon="script.module.futures" version="2.2.0"/>
@@ -189,7 +188,7 @@ Rework for newf 2.0
 	</extension>
 </addon>
 
-<addon id="plugin.video.newf" version="2.0.18" name="Newf" provider-name="Newf276">
+<addon id="plugin.video.newf" version="2.0.18" name="Newf" provider-name="Nixgates, Newf276">
     <requires>
         <import addon="xbmc.python" version="2.26.0" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -536,7 +535,7 @@ Rework for newf 2.0
     </extension>
 </addon>
 
-<addon id="screensaver.weather" name="Weather Screensaver" version="200.0" provider-name="Newf276, drinferno, rob west">
+<addon id="screensaver.weather" name="Weather Screensaver" version="1.0" provider-name="Newf276, drinferno, rob west">
     <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     </requires>
@@ -546,7 +545,7 @@ Rework for newf 2.0
         <description lang="en">Screensaver that displays the weather.</description>
         <platform>all</platform>
         <license>See LICENSE.txt</license>
-        <news>vV200.0 (2021-03-01)[CR]- Kodi 18 compatable</news>
+        <news>vV1.0 (2021-03-01)[CR]- Kodi 18 compatable</news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -554,7 +553,7 @@ Rework for newf 2.0
     </extension>
 </addon>
 
-<addon id="script.extendedinfo" name="Extended Info" version="1000.3" provider-name="Newf276">
+<addon id="script.extendedinfo" name="Discover-Info" version="200.0.1" provider-name="Newf276">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
 		<import addon="script.module.pil" version="1.1.7"/>
@@ -562,7 +561,6 @@ Rework for newf 2.0
 		<import addon="script.module.requests" version="2.9.1"/>
 		<import addon="script.skin.helper.service" version="1.0.0"/>
 		<import addon="resource.images.studios.white" version="0.0.18"/>
-		<import addon="plugin.video.discover" version="1.0.0" optional="true"/>
 	</requires>
 	<extension point="xbmc.python.script" library="script.py"/>
 	<extension point="xbmc.python.pluginsource" library="plugin.py">
@@ -571,7 +569,7 @@ Rework for newf 2.0
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
 			<item library="context.py">
-				<label>Extended Info</label>
+				<label>Discover-Info</label>
 				<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,season) | String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,actor) | String.IsEqual(ListItem.dbtype,director)</visible>
 			</item>
 		</menu>
@@ -579,17 +577,20 @@ Rework for newf 2.0
 	<extension point="xbmc.addon.metadata">
 		<reuselanguageinvoker>false</reuselanguageinvoker>
 		<platform>all</platform>
-		<summary>Fork of the ExtendedInfo script from phil65</summary>
-		<description>This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Needs skin implementation for lot of functions and discover for library functions.</description>
+		<summary>Fork of the ExtendedInfo script/OpenInfo from phil65/vitor07/A4K. Thank you all for the amazing coding work.</summary>
+		<description>This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Needs skin implementation for lot of functions and plugin.video.discover for library and player functions.</description>
 		<assets>
-			<icon>icon.jpg</icon>
-			<fanart>fanart.jpg</fanart>
+			<icon>resources/icon.jpg</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot1.jpg</screenshot>
+			<screenshot>resources/screenshot2.jpg</screenshot>
+			<screenshot>resources/screenshot3.jpg</screenshot>
 		</assets>
-		<news></news>
+		<news>200.0.1 Customized for Discover Addon</news>
 	</extension>
 </addon>
 
-<addon id="skin.estuary.newf" version="2.0.27" name="Estuary-Newf" provider-name="newf276, Ichabod Fletchman">
+<addon id="skin.estuary.newf" version="20.0.27" name="Estuary-Newf" provider-name="newf276, Ichabod Fletchman">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0"/>
 	</requires>

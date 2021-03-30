@@ -18,7 +18,7 @@
 				<include>ButtonMenuList</include>
 				<content>
 					   <item>
-						<label>Search newf</label>
+						<label>Search Newf</label>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick condition="System.hasAddon(plugin.video.newf)">ActivateWindow(10025,&quot;plugin://plugin.video.newf/?action=searchMenu&amp;from_widget=false&quot;,return)</onclick>
 						<onclick condition="!System.hasAddon(plugin.video.newf)">InstallAddon(plugin.video.newf)</onclick>

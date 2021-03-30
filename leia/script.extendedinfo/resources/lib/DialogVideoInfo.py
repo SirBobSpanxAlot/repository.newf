@@ -183,7 +183,7 @@ def get_movie_window(window_type):
 		@ch.click(445)
 		def show_manage_dialog(self):
 			manage_list = []
-			manage_list.append(["Extended Info's settings", 'Addon.OpenSettings("script.extendedinfo")'])
+			manage_list.append(["OpenInfo's settings", 'Addon.OpenSettings("script.extendedinfo")'])
 			manage_list.append(["Discover's settings", 'Addon.OpenSettings("plugin.video.discover")'])
 			manage_list.append(["YouTube's settings", 'Addon.OpenSettings("plugin.video.youtube")'])
 			selection = xbmcgui.Dialog().select(heading='Settings', list=[i[0] for i in manage_list])
@@ -195,7 +195,7 @@ def get_movie_window(window_type):
 		def add_movie_to_library(self):
 			if not xbmc.getCondVisibility('System.HasAddon(plugin.video.discover)'):
 				xbmc.executebuiltin('RunPlugin(plugin://plugin.video.discover/setup/total)')
-			if xbmcgui.Dialog().yesno('extendedinfo', 'Add [B]%s[/B] to library?' % self.info['title']):
+			if xbmcgui.Dialog().yesno('OpenInfo', 'Add [B]%s[/B] to library?' % self.info['title']):
 				xbmc.executebuiltin('RunPlugin(plugin://plugin.video.discover/movies/add_to_library/tmdb/%s)' % self.info.get('id', ''))
 				Utils.after_add(type='movie')
 				Utils.notify(header='[B]%s[/B] added to library' % self.info['title'], message='Exit & re-enter to refresh', icon=self.info['poster'], time=5000, sound=False)
@@ -204,7 +204,7 @@ def get_movie_window(window_type):
 		def remove_movie_from_library(self):
 			if not xbmc.getCondVisibility('System.HasAddon(plugin.video.discover)'):
 				xbmc.executebuiltin('RunPlugin(plugin://plugin.video.discover/setup/total)')
-			if xbmcgui.Dialog().yesno('extendedinfo', 'Remove [B]%s[/B] from library?' % self.info['title']):
+			if xbmcgui.Dialog().yesno('OpenInfo', 'Remove [B]%s[/B] from library?' % self.info['title']):
 				if os.path.exists(xbmc.translatePath('%s%s/' % (Utils.OPENMETA_MOVIE_FOLDER, self.info['imdb_id']))):
 					Utils.get_kodi_json(method='VideoLibrary.RemoveMovie', params='{"movieid": %d}' % int(self.info['dbid']))
 					shutil.rmtree(xbmc.translatePath('%s%s/' % (Utils.OPENMETA_MOVIE_FOLDER, self.info['imdb_id'])))

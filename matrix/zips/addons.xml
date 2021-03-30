@@ -173,7 +173,7 @@ Rework for newf 2.0
   </extension>
 </addon>
 
-<addon id="plugin.audio.tunein2021" name="TuneIn Radio" version="2.2.3+matrix" provider-name="newf276">
+<addon id="plugin.audio.tunein2021" name="TuneIn Radio" version="3.2.3+matrix" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
     		<import addon="script.module.kodi-six" />
@@ -190,7 +190,7 @@ Rework for newf 2.0
 		<language>"English and German</language>
  		<email>nil</email>
 		<assets>
-			<icon>icon.png</icon>
+			<icon>icon.jpg</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
    </extension>
@@ -2670,8 +2670,8 @@ Fixed View Types not being set
 		<source>https://github.com/Maven85/OSMOSIS</source>
 		<news></news>
 		<assets>
-			<icon>resources/media/icon.jpg</icon>
-			<fanart>resources/media/fanart.jpg</fanart>
+			<icon>icon.jpg</icon>
+			<fanart>fanart.jpg</fanart>
 		</assets>
 		<language>en de</language>
 		<reuselanguageinvoker>true</reuselanguageinvoker>
@@ -2782,7 +2782,7 @@ Fixed View Types not being set
     </extension>
 </addon>
 
-<addon id="screensaver.weather" name="Weather Screensaver" version="1.0.1+matrix.1" provider-name="Newf276, drinferno, rob west">
+<addon id="screensaver.weather" name="Weather Screensaver" version="1.1+matrix.1" provider-name="Newf276, drinferno, rob west">
     <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -2794,7 +2794,7 @@ Fixed View Types not being set
         <license>See LICENSE.txt</license>
         <news>v1.0.1+matrix.1 (2021-03-01)[CR]- Kodi 19 Matrix compatable</news>
         <assets>
-            <icon>icon.png</icon>
+            <icon>icon.jpg</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>

@@ -7,8 +7,8 @@ from resources.lib.xswift2 import plugin
 
 API_ENDPOINT  = 'https://api-v2launch.trakt.tv'
 REDIRECT_URI  = 'urn:ietf:wg:oauth:2.0:oob'
-CLIENT_ID     = '5907b6b239f4ce221d1af6901b57160c37b7030ee9265efa1690e05a06d8ed31'
-CLIENT_SECRET = '88ede966b4b3d549932cbd6c6df9806f010cb721fbea734e489469b4e2acd5b6'
+CLIENT_ID     = 'f57d6a6371ce2eec4e232b2177f508310c53652b34a81deed4c1d6ef1b83305f'
+CLIENT_SECRET = 'd34930baaa09985ae6482967a20d88ace17d6cadb019c1decd8885849122d49a'
 
 def call_trakt(path, params={}, data=None, is_delete=False, with_auth=True, pagination=False, page=1):
     params = dict([(k, text.to_utf8(v)) for k, v in params.items() if v])
@@ -126,56 +126,56 @@ def trakt_get_latest_releases_movies():
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_imdb_top_rated_movies(page):
-    result, pages = call_trakt('users/justin/lists/imdb-top-rated-movies/items', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('users/justin/lists/imdb-top-rated-movies/items', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_trending_shows_paginated(page):
-    result, pages = call_trakt('shows/trending', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('shows/trending', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_popular_shows_paginated(page):
-    result, pages = call_trakt('shows/popular', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('shows/popular', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_watched_shows_paginated(page):
-    result, pages = call_trakt('shows/watched/weekly', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('shows/watched/weekly', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_collected_shows_paginated(page):
-    result, pages = call_trakt('shows/collected/weekly', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('shows/collected/weekly', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_trending_movies_paginated(page):
-    result, pages = call_trakt('movies/trending', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('movies/trending', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_popular_movies_paginated(page):
-    result, pages = call_trakt('movies/popular', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('movies/popular', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_watched_movies_paginated(page):
-    result, pages = call_trakt('movies/watched/weekly', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('movies/watched/weekly', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_collected_movies_paginated(page):
-    result, pages = call_trakt('movies/collected/weekly', params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    result, pages = call_trakt('movies/collected/weekly', params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
     return  result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_related_movies_paginated(imdb_id, page):
-    return call_trakt('movies/%s/related' % imdb_id, params={'extended': 'full', 'limit': '20'}, pagination=True, page=page, with_auth=False)
+    return call_trakt('movies/%s/related' % imdb_id, params={'extended': 'full', 'limit': '40'}, pagination=True, page=page, with_auth=False)
 
 @plugin.cached(TTL=60, cache='Trakt')
 def trakt_get_liked_lists(page=1):
-    result, pages = call_trakt('users/likes/lists', params={'limit': '20'}, pagination=True, page=page)
+    result, pages = call_trakt('users/likes/lists', params={'limit': '40'}, pagination=True, page=page)
     return result, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
@@ -214,7 +214,7 @@ def get_movie(id):
 
 @plugin.cached(TTL=60, cache='Trakt')
 def search_for_list(list_name, page):
-    results, pages = call_trakt('search', params={'type': 'list', 'query': list_name, 'limit': '20'}, pagination=True, page=page)
+    results, pages = call_trakt('search', params={'type': 'list', 'query': list_name, 'limit': '24'}, pagination=True, page=page)
     return results, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
@@ -224,10 +224,10 @@ def search_for_movie(movie_title, page):
 
 @plugin.cached(TTL=60, cache='Trakt')
 def search_for_movie_paginated(movie_title, page):
-    results, pages = call_trakt('search', params={'type': 'movie', 'query': movie_title, 'limit': '20'}, pagination=True, page=page)
+    results, pages = call_trakt('search', params={'type': 'movie', 'query': movie_title, 'limit': '40'}, pagination=True, page=page)
     return results, pages
 
 @plugin.cached(TTL=60, cache='Trakt')
 def search_for_tvshow_paginated(show_name, page):
-    results, pages = call_trakt('search', params={'type': 'show', 'query': show_name, 'limit': '20'}, pagination=True, page=page)
+    results, pages = call_trakt('search', params={'type': 'show', 'query': show_name, 'limit': '40'}, pagination=True, page=page)
     return results, pages
