@@ -46,7 +46,7 @@ class Wizard:
         if self.dialog.yesno(CONFIG.ADDONTITLE,
                            "[COLOR {0}]Do you wish to restore your".format(CONFIG.COLOR2) +'\n' + "Kodi configuration to default settings" + '\n' + "Before installing the build backup?[/COLOR]",
                            nolabel='[B][COLOR red]No[/COLOR][/B]',
-                           yeslabel='[B][COLOR deepskyblue]Yes[/COLOR][/B]'):
+                           yeslabel='[B][COLOR springgreen]Yes[/COLOR][/B]'):
             install.wipe()
 
     def build(self, name, over=False):
@@ -73,12 +73,12 @@ class Wizard:
             warning = False
 
         if warning:
-            yes_pressed = self.dialog.yesno("{0} - [COLOR red]WARNING!![/COLOR]".format(CONFIG.ADDONTITLE), '[COLOR {0}]There is a chance that the skin will not appear correctly'.format(CONFIG.COLOR2) + '\n' + 'When installing a {0} build on a Kodi {1} install'.format(check.check_build(name, 'kodi'), CONFIG.KODIV) + '\n' + 'Would you still like to install: [COLOR {0}]{1} v{2}[/COLOR]?[/COLOR]'.format(CONFIG.COLOR1, name, check.check_build(name, 'version')), nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR deepskyblue]Yes, Install[/COLOR][/B]')
+            yes_pressed = self.dialog.yesno("{0} - [COLOR red]WARNING!![/COLOR]".format(CONFIG.ADDONTITLE), '[COLOR {0}]There is a chance that the skin will not appear correctly'.format(CONFIG.COLOR2) + '\n' + 'When installing a {0} build on a Kodi {1} install'.format(check.check_build(name, 'kodi'), CONFIG.KODIV) + '\n' + 'Would you still like to install: [COLOR {0}]{1} v{2}[/COLOR]?[/COLOR]'.format(CONFIG.COLOR1, name, check.check_build(name, 'version')), nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR springgreen]Yes, Install[/COLOR][/B]')
         else:
             if over:
                 yes_pressed = 1
             else:
-                yes_pressed = self.dialog.yesno(CONFIG.ADDONTITLE, '[COLOR {0}]Would you like to Download and Install: '.format(CONFIG.COLOR2) + '[COLOR {0}]{1} v{2}[/COLOR]?[/COLOR]'.format(CONFIG.COLOR1, name, check.check_build(name,'version')), nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR deepskyblue]Yes, Install[/COLOR][/B]')
+                yes_pressed = self.dialog.yesno(CONFIG.ADDONTITLE, '[COLOR {0}]Would you like to Download and Install: '.format(CONFIG.COLOR2) + '[COLOR {0}]{1} v{2}[/COLOR]?[/COLOR]'.format(CONFIG.COLOR1, name, check.check_build(name,'version')), nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR springgreen]Yes, Install[/COLOR][/B]')
         if yes_pressed:
             CONFIG.clear_setting('build')
             buildzip = check.check_build(name, 'url')
@@ -135,7 +135,7 @@ class Wizard:
                     yes_pressed = self.dialog.yesno(CONFIG.ADDONTITLE,
                                        '[COLOR {0}][COLOR {1}]{2} v{3}[/COLOR]'.format(CONFIG.COLOR2, CONFIG.COLOR1, name, check.check_build(name, 'version')) +'\n' + 'Completed: [COLOR {0}]{1}{2}[/COLOR] [Errors:[COLOR {3}]{4}[/COLOR]]'.format(CONFIG.COLOR1, percent, '%', CONFIG.COLOR1, errors) + '\n' + 'Would you like to view the errors?[/COLOR]',
                                        nolabel='[B][COLOR red]No Thanks[/COLOR][/B]',
-                                       yeslabel='[B][COLOR deepskyblue]View Errors[/COLOR][/B]')
+                                       yeslabel='[B][COLOR springgreen]View Errors[/COLOR][/B]')
                     if yes_pressed:
                         from resources.libs.gui import window
                         window.show_text_box("Viewing Build Install Errors", error)
@@ -145,10 +145,12 @@ class Wizard:
                 themecount = BuildMenu().theme_count(name)
 
                 if themecount > 0:
-                    self.theme(name, 'theme')
+                    self.theme(name)
 
                 db.addon_database(CONFIG.ADDON_ID, 1)
                 db.force_check_updates(over=True)
+                if os.path.exists(os.path.join(CONFIG.USERDATA, '.enableall')):
+                	CONFIG.set_setting('enable_all', 'true')
 
                 self.dialog.ok(CONFIG.ADDONTITLE, "[COLOR {0}]To save changes you now need to force close Kodi, Press OK to force close Kodi[/COLOR]".format(CONFIG.COLOR2))
                 tools.kill_kodi(over=True)
@@ -167,12 +169,12 @@ class Wizard:
                 yes_pressed = self.dialog.yesno(CONFIG.ADDONTITLE,
                                    '[COLOR {0}]Would you like to apply the guifix for:'.format(CONFIG.COLOR2) + '\n' + '[COLOR {0}]{1}[/COLOR]?[/COLOR]'.format(CONFIG.COLOR1, name),
                                    nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]',
-                                   yeslabel='[B][COLOR deepskyblue]Apply Fix[/COLOR][/B]')
+                                   yeslabel='[B][COLOR springgreen]Apply Fix[/COLOR][/B]')
         else:
             yes_pressed = self.dialog.yesno("{0} - [COLOR red]WARNING!![/COLOR]".format(CONFIG.ADDONTITLE),
                                "[COLOR {0}][COLOR {1}]{2}[/COLOR] community build is not currently installed.".format(CONFIG.COLOR2, CONFIG.COLOR1, name) + '\n' + "Would you like to apply the guiFix anyways?.[/COLOR]",
                                nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]',
-                               yeslabel='[B][COLOR deepskyblue]Apply Fix[/COLOR][/B]')
+                               yeslabel='[B][COLOR springgreen]Apply Fix[/COLOR][/B]')
         if yes_pressed:
             guizip = check.check_build(name, 'gui')
             zipname = name.replace('\\', '').replace('/', '').replace(':', '').replace('*', '').replace('?', '').replace('"', '').replace('<', '').replace('>', '').replace('|', '')
@@ -218,7 +220,7 @@ class Wizard:
             logging.log_notify(CONFIG.ADDONTITLE,
                                '[COLOR {0}]GuiFix: Cancelled![/COLOR]'.format(CONFIG.COLOR2))
 
-    def theme(self, name, theme, over=False):
+    def theme(self, name, theme='', over=False):
         installtheme = False
 
         if not theme:
@@ -230,7 +232,7 @@ class Wizard:
                 themes = BuildMenu().theme_count(name, False)
                 if len(themes) > 0:
                     if self.dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]The Build [COLOR {1}]{2}[/COLOR] comes with [COLOR {3}]{4}[/COLOR] different themes".format(CONFIG.COLOR2, CONFIG.COLOR1, name, CONFIG.COLOR1, len(themes)) + '\n' + "Would you like to install one now?[/COLOR]",
-                                    yeslabel="[B][COLOR deepskyblue]Install Theme[/COLOR][/B]",
+                                    yeslabel="[B][COLOR springgreen]Install Theme[/COLOR][/B]",
                                     nolabel="[B][COLOR red]Cancel Themes[/COLOR][/B]"):
                         logging.log("Theme List: {0}".format(str(themes)))
                         ret = self.dialog.select(CONFIG.ADDONTITLE, themes)
@@ -250,7 +252,7 @@ class Wizard:
                 logging.log_notify(CONFIG.ADDONTITLE,
                                    '[COLOR {0}]Theme Install: None Found![/COLOR]'.format(CONFIG.COLOR2))
         else:
-            installtheme = self.dialog.yesno(CONFIG.ADDONTITLE, '[COLOR {0}]Would you like to install the theme:'.format(CONFIG.COLOR2) +' \n' + '[COLOR {0}]{1}[/COLOR]'.format(CONFIG.COLOR1, theme) + '\n' + 'for [COLOR {0}]{1} v{2}[/COLOR]?[/COLOR]'.format(CONFIG.COLOR1, name, check.check_build(name,'version')),yeslabel="[B][COLOR deepskyblue]Install Theme[/COLOR][/B]", nolabel="[B][COLOR red]Cancel Themes[/COLOR][/B]")
+            installtheme = self.dialog.yesno(CONFIG.ADDONTITLE, '[COLOR {0}]Would you like to install the theme:'.format(CONFIG.COLOR2) +' \n' + '[COLOR {0}]{1}[/COLOR]'.format(CONFIG.COLOR1, theme) + '\n' + 'for [COLOR {0}]{1} v{2}[/COLOR]?[/COLOR]'.format(CONFIG.COLOR1, name, check.check_build(name,'version')),yeslabel="[B][COLOR springgreen]Install Theme[/COLOR][/B]", nolabel="[B][COLOR red]Cancel Themes[/COLOR][/B]")
                                         
         if installtheme:
             themezip = check.check_theme(name, theme, 'url')

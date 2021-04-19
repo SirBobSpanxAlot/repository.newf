@@ -1,0 +1,2 @@
+Changelog 6.19:
+Fixed alldebrid.

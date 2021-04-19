@@ -62,7 +62,7 @@ def check_build(name, ret):
 
     link = response.text.replace('\n', '').replace('\r', '').replace('\t', '')\
         .replace('gui=""', 'gui="http://"').replace('theme=""', 'theme="http://"')
-    match = re.compile('name="%s".+?ersion="(.+?)".+?rl="(.+?)".+?inor="(.+?)".+?ui="(.+?)".+?odi="(.+?)".+?heme="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?review="(.+?)".+?dult="(.+?)".+?nfo="(.+?)".+?escription="(.+?)"' % name).findall(link)
+    match = re.compile('name="%s".+?ersion="(.+?)".+?rl="(.+?)".+?inor="(.+?)".+?ui="(.+?)".+?odi="(.+?)".+?heme="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?review="(.+?)".+?dult="(.+?)".+?nfo="(.+?)".+?escription="(.+?)"' % name.replace('[', '\[').replace(']', '\]')).findall(link)
     if len(match) > 0:
         for version, url, minor, gui, kodi, theme, icon, fanart, preview, adult, info, description in match:
             if ret == 'version':
@@ -117,7 +117,7 @@ def check_theme(name, theme, ret):
         return False
 
     link = response.text.replace('\n', '').replace('\r', '').replace('\t', '')
-    match = re.compile('name="{0}".+?rl="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?dult=(.+?).+?escription="(.+?)"'.format(theme)).findall(link)
+    match = re.compile('name="{0}".+?rl="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?dult=(.+?).+?escription="(.+?)"'.format(theme.replace('[', '\[').replace(']', '\]'))).findall(link)
     if len(match) > 0:
         for url, icon, fanart, adult, description in match:
             if ret == 'url':
@@ -167,7 +167,7 @@ def check_build_update():
         return
 
     link = response.text.replace('\n', '').replace('\r', '').replace('\t', '')
-    match = re.compile('name="%s".+?ersion="(.+?)".+?con="(.+?)".+?anart="(.+?)"' % CONFIG.BUILDNAME).findall(link)
+    match = re.compile('name="%s".+?ersion="(.+?)".+?con="(.+?)".+?anart="(.+?)"' % CONFIG.BUILDNAME.replace('[', '\[').replace(']', '\]')).findall(link)
     if len(match) > 0:
         version = match[0][0]
         icon = match[0][1]
@@ -294,7 +294,7 @@ def check_sources():
         logging.log("Bad Sources: {0}".format(len(bad)))
         if len(bad) > 0:
             choice = dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]{1}[/COLOR][COLOR {2}] Source(s) have been found Broken".format(CONFIG.COLOR1, len(bad), CONFIG.COLOR2) + '\n' + "Would you like to Remove all or choose one by one?[/COLOR]",
-                                      yeslabel="[B][COLOR deepskyblue]Remove All[/COLOR][/B]",
+                                      yeslabel="[B][COLOR springgreen]Remove All[/COLOR][/B]",
                                       nolabel="[B][COLOR red]Choose to Delete[/COLOR][/B]")
             if choice == 1:
                 remove = bad
@@ -303,7 +303,7 @@ def check_sources():
                     logging.log("{0} sources: {1}, {2}".format(name, path, working))
                     if dialog.yesno(CONFIG.ADDONTITLE,
                                         "[COLOR {0}]{1}[/COLOR][COLOR {2}] was reported as non working".format(CONFIG.COLOR1, name, CONFIG.COLOR2) + '\n' + "[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, path) + '\n' + "[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, working),
-                                        yeslabel="[B][COLOR deepskyblue]Remove Source[/COLOR][/B]",
+                                        yeslabel="[B][COLOR springgreen]Remove Source[/COLOR][/B]",
                                         nolabel="[B][COLOR red]Keep Source[/COLOR][/B]"):
                         remove.append([name, path, sharing, working])
                         logging.log("Removing Source {0}".format(name))

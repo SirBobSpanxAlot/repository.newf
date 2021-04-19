@@ -9,7 +9,7 @@ ext_key = xbmcaddon.Addon().getSetting('tmdb_api')
 if len(ext_key) == 32:
 	API_key = ext_key
 else:
-	API_key = '1248868d7003f60f2386595db98455ef'
+	API_key = '772defd0fb9daa76166a0163c458ad7e'
 
 def get_certification_list(media_type):
 	response = get_tmdb_data('certification/%s/list?' % media_type, 999999)

@@ -69,6 +69,44 @@ Rework for newf 2.0
 	</extension>
 </addon>
 
+<addon id="context.seren" version="1.0" name="Seren Context" provider-name="Newf">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0" />
+	</requires>
+	<extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+			<item library="traktManager.py">
+				<label>Trakt Manager</label>
+				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="rescrape.py">
+                <label>Rescrape Item</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+            </item>
+			<item library="findSimilar.py">
+                <label>Find Similar</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+            </item>
+        </menu>
+    </extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">seren - This Addon is currently in beta. Please be aware there may be bugs present</summary>
+		<description lang="en">Adds Global Contextual Menu Items for seren menu items throughout Kodi
+		</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<disclaimer lang="en"></disclaimer>
+		<assets>
+			<icon>ico-fox-gold-final.png</icon>
+			<fanart>fanart-fox-gold-final.png</fanart>
+		</assets>
+		<news>Added Trakt Manager</news>
+	</extension>
+</addon>
+
 <addon id="plugin.audio.iheart"
        name="iHeartRadio"
        version="0.1.1"
@@ -153,39 +191,298 @@ Rework for newf 2.0
     </extension>
 </addon>
 
-<addon id="plugin.video.discover" name="Discover" version="200.0.1" provider-name="Newf276">
-	<requires>
-		<import addon="xbmc.python" version="2.25.0"/>
-		<import addon="script.module.futures" version="2.2.0"/>
-		<import addon="script.module.requests" version="2.9.1"/>
-		<import addon="script.module.requests-cache" version="0.4.13"/>
-        <import addon="metadata.tvdb.com" version="3.0.14"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="addon.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.service" library="service.py" start="login"/>
-	<extension point="kodi.context.item">
-		<menu id="kodi.core.main">
-			<item library="context.py">
-				<label>Discover</label>
-				<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)</visible>
-			</item>
-		</menu>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<reuselanguageinvoker>false</reuselanguageinvoker>
-		<platform>all</platform>
-        <summary>Fork of OpenMeta/Script.Meta script from A4K/vitor07. Thank you both for all the greeat work.</summary>
-		<description>This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types.Player files required, and Discover-Info for extra information.</description>
-		<assets>
-			<icon>resources/icon.jpg</icon>
-			<fanart>resources/fanart.jpg</fanart>
-			<screenshot>resources/screenshot000.jpg</screenshot>
-			<screenshot>resources/screenshot001.jpg</screenshot>
-			<screenshot>resources/screenshot002.jpg</screenshot>
-		</assets>
-	</extension>
+<addon id="plugin.video.a4kstreaming"
+       name="a4kStreaming"
+       version="1.26.0"
+       provider-name="Unknown">
+    <requires>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.beautifulsoup4"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="main_service.py" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">a4kStreaming - IMDb-based media browser</summary>
+        <description>
+IMDb-based media browser addon for KODI with streaming support via external providers.
+Designed for low-end devices and Estuary skin.
+        </description>
+        <platform>all</platform>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <license>MIT License</license>
+        <website>https://github.com/newt-sc/a4kStreaming</website>
+        <source>https://github.com/newt-sc/a4kStreaming</source>
+        <assets>
+            <icon>icon.png</icon>
+            <screenshot>screenshot-01.jpg</screenshot>
+            <screenshot>screenshot-02.jpg</screenshot>
+            <screenshot>screenshot-03.jpg</screenshot>
+            <screenshot>screenshot-04.jpg</screenshot>
+            <screenshot>screenshot-05.jpg</screenshot>
+            <screenshot>screenshot-06.jpg</screenshot>
+        </assets>
+        <news>
+[v1.26.0]:
+  * Handle meta issues where an older episode has newer release date
+
+[v1.25.0]:
+  * Additional requests error handling
+
+[v1.24.0]:
+  * Improve Actor/Actress/Director titles browsing
+
+[v1.23.0]:
+  * Fix force select context menu
+
+[v1.22.0]:
+  * Improve episode thumbnail meta
+
+[v1.21.0]:
+  * Fix seasons year
+
+[v1.20.0]:
+  * Pass episodes country meta to the provider
+  * Use only last episodes release date for season ranges
+
+[v1.19.0]:
+  * Fix PM browsing in KODI 18 - redefining variable from scope
+
+[v1.18.0]:
+  * Show only video files in Premiumize folder browsing by default - allows using "Play from here" KODI context menu to play the files sequentially
+  * New context menu:
+    * Premiumize: All Files - available on PM folders, allows browsing without filters
+
+[v1.17.0]:
+  * Support subtitles from Premiumize files browsing if located next to video file with same name
+
+[v1.16.0]:
+  * New settings:
+    * Autoplay - instead of showing source select, auto choose the first source that resolves
+  * New context menu:
+    * Force source select - only available when Autoplay is enabled
+  * Add more episode auto selection checks
+  * Allow browsing cast and crew to find titles which they are known for (This is new API which currently returns test results)
+
+[v1.15.0]:
+  * Add RD expired notification
+
+[v1.14.0]:
+  * Fix hash check issues
+
+[v1.13.0]:
+  * Allow "More like this" to be used without IMMDb token
+  * Add more TVShows info on titles listing
+  * Add "Cast and Crew" context menu on TVShows
+  * Show notification if the specified quality filter is being ignored when no results are left after it
+
+[v1.12.0]:
+  * Ensure character casing matches on debrid check
+
+[v1.11.0]:
+  * Add support for provider's own caching
+
+[v1.10.0]:
+  * Remove TVShow item from season listing
+  * Add episode title template without number
+
+[v1.9.0]:
+  * Add watched indication to TVShow title in season's listing when all seasons are watched
+  * Include director, writer, cast, country and studio meta in general title views
+
+[v1.8.0]:
+  * Ignore sample videos in RD's resolve files selection
+
+[v1.7.0]:
+  * Speedup source searching for episodes from still airing seasons
+
+[v1.6.0]:
+  * Improve episode selection matching
+
+[v1.5.0]:
+  * When poster and thumb are the same use the same size for them
+  * Fix poster aspect ratio in some skins
+
+[v1.4.0]:
+  * Fix titles do not have poster in AURA skin
+
+[v1.3.0]:
+  * New settings:
+    * Max quality of sources
+
+[v1.2.0]:
+  * Prompt for episode selection for uncomplete packs with single video
+
+[v1.1.0]:
+  * Fix episode auto selection being skipped for some results
+
+[v1.0.0]:
+  * Fix TV Specials not being shown in search and other views
+  * Increase Cast And Crew view limit
+  * PM support for deleting files/folders/transfers and clearing finished transfers
+
+[v0.26.0]:
+  * AllDebrid and RealDebrid:
+    * Cloud browsing
+    * Deleting transfers
+    * Caching additional sources
+
+[v0.25.0]:
+  * AllDebrid support
+
+[v0.24.0]:
+  * Reduce file size filter
+  * Remove debug logs
+
+[v0.23.0]:
+  * RealDebrid support
+
+[v0.22.0]:
+  * New context menu:
+    * Trailer
+    * Add sources - Used to cache new sources to debrid
+  * Option to cache sources if none are found
+  * Add debrid transfers browsing
+  * Fix issue of not finding enough sources for movie titles from the Search menu
+
+[v0.21.0]:
+  * Add debrid files browsing and streaming
+
+[v0.20.0]:
+  * Fix missing seasons meta breaking tvshow scraping
+
+[v0.19.0]:
+  * Remove the extra info view on title click
+  * New context menu:
+    * Cast and Crew - Showing the extra info view
+  * New settings:
+    * Season title template
+    * Episode title template
+  * Cache last title for the play by id action to speedup usage from TheMovieDb Helper
+
+[v0.18.0]:
+  * Fix poster transform twice
+
+[v0.17.0]:
+  * Support play action with an id only
+  * Add player meta json for tmdb helper
+
+[v0.16.0]:
+  * Fix more like this context menu for KODI 19
+  * More patterns for episode auto selection
+
+[v0.15.0]:
+  * Select proper image for episode thumbnail
+  * Add one more pattern for episode auto selection
+
+[v0.14.0]:
+  * Fix provider having removed sources
+
+[v0.13.0]:
+  * Update cached results time each time they are used
+
+[v0.12.0]:
+  * Show proper error notification when invalid IMDb token is set
+
+[v0.11.0]:
+  * Fix provider init
+
+[v0.10.0]:
+  * Fix view mode switching on cancellation
+  * Use bytes format for json parsing (speeds up some results loading)
+
+[v0.9.0]:
+  * Fix setting update needs addon reinitialization
+
+[v0.8.0]:
+  * Fix auto video selection in KODI 19
+
+[v0.7.0]:
+  * Fix KODI 19 Matrix support
+  * Speedup list items creation
+
+[v0.6.0]:
+  * Improve auto episode selection from packs
+
+[v0.5.0]:
+  * New context menu:
+    * More like this - Showing similar titles
+
+[v0.4.0]:
+  * Update description
+
+[v0.3.0]:
+  * Fix browsing shows which do not have any episodes with release dates
+  * Fix some titles being filtered out
+
+[v0.2.0]:
+  * Speedup loading by removing query for watchlist status
+  * Order lists by date added (desc)
+  * Add separate setting for lists page size
+  * Improve posters quality
+  * Improve cast for movies
+
+[v0.1.0]:
+  * IMDb:
+    * Authentication via cookie
+    * Browsing for titles
+      * Trending
+      * Fan Favourites
+      * Recommended
+      * Discover by Year
+    * Browsing Shows
+      * Seasons
+      * Season episodes
+    * Lists
+    * Watchlist
+    * Search for titles or people
+    * Mark as watched/unwatched (by rating/unrating a title)
+      * Auto mark as watched when played more than 90 percents
+    * Add/Remove to/from list
+    * Artwork for posters, thumbnails and fanart
+    * Trailers
+    * Rate/Unrate titles
+  * Provider support
+    * Install
+    * Manage
+    * Auto update
+    * Caching of results
+  * Debrid support
+    * Premiumize
+  * Misc
+    * Migrate watched titles from Trakt.tv to IMDb (via rating)
+    * Migrate movies and shows collection from Trakt.tv to IMDb custom lists
+        </news>
+    </extension>
+</addon>
+
+<addon id="plugin.video.cbc"
+       name="Canadian Broadcasting Corp (CBC)"
+       version="14.0.6"
+       provider-name="micahg,t1m">
+  <requires>
+    <import addon="xbmc.python" version="2.26.0"/>
+    <import addon="script.module.requests" version="2.12.4"/>
+    <import addon="script.module.inputstreamhelper" version="0.3.3"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">CBC TV Kodi Plugin</summary>
+    <description lang="en">View online content from the Canadian Broadcasting Corporation.</description>
+    <platform>all</platform>
+    <language>en</language>
+    <disclaimer lang="en">For bugs, requests or general questions visit the CBC TV thread on the Kodi forum.</disclaimer>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum>https://forum.kodi.tv/showthread.php?tid=328421</forum>
+    <website>https://watch.cbc.ca/</website>
+    <source>https://github.com/micahg/plugin.video.cbc</source>
+    <news>v4.0.6
+- Use inputstream.adaptive
+- Allow fallback to ffmpeg (configurable in settings)</news>
+  </extension>
 </addon>
 
 <addon id="plugin.video.newf" version="2.0.18" name="Newf" provider-name="Nixgates, Newf276">
@@ -453,6 +750,134 @@ Rework for newf 2.0
     </extension>
 </addon>
 
+<addon id="plugin.video.openmeta" name="OpenMeta" version="99.05.1" provider-name="Newf276">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+		<import addon="metadata.tvdb.com" version="3.0.14"/>
+		<import addon="script.module.futures" version="2.2.0"/>
+		<import addon="script.module.requests" version="2.19.1"/>
+		<import addon="script.module.requests-cache" version="0.4.13"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py"/>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="context.py">
+				<label>OpenMeta</label>
+				<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">TMDb, TVDb and Trakt browser</summary>
+		<description lang="en">Browse The MovieDb, The TVDb, Trakt and pass info along to library or an addon. Needs player-files and the appropriate addon to play the files.</description>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot000.jpg</screenshot>
+			<screenshot>resources/screenshot001.jpg</screenshot>
+			<screenshot>resources/screenshot002.jpg</screenshot>
+		</assets>
+		<license></license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<news></news>
+	</extension>
+</addon>
+
+<addon id="plugin.video.seren" version="6.19" name="Chinook" provider-name="Newf276">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0" />
+		<import addon="script.module.requests" version="2.19.1" />
+		<import addon="script.module.beautifulsoup4" version="4.5.3"/>
+		<import addon="plugin.video.youtube" version="6.2.0"/>
+		<import addon="script.module.dateutil" version="2.7.3"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="Seren.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" />
+	<extension point="xbmc.addon.metadata">
+		<reuselanguageinvoker>false</reuselanguageinvoker> <!-- You can enable this if you want, expect some instability but much faster menu speeds -->
+		<summary lang="en">Seren - Modular Multi-source Addon</summary>
+		<description lang="en"> Seren is a modular provider based, cloud service streaming software that is tightly interwoven with Trakt. Seren provides the freedom to view media from a single menu system from service providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
+		</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum></forum>
+		<website>https://github.com/newf276/plugin.video.seren</website>
+		<source>https://github.com/newf276/plugin.video.seren</source>
+		<disclaimer lang="en">
+			Last updated: April, 2021.
+			The information contained within the Seren software (the "Service") is for general information purposes only.
+			The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it assume responsibility for any material provided by any external services.
+			The use of the Service does not authorise the user to engage in any kind of illegal, criminal or tortious activity through the use of the software, including infringement of any third party intellectual property rights (including without limitation copyright, trade marks, patent, trade secrets and confidential information), fraud, child pornography, trafficking in obscene material, violation of applicable export restrictions, drug dealing, gambling, harassment, stalking, spamming, hacking, sending of viruses or other harmful files or illegal posting of computer passwords or computer code.
+			The user is responsible for all their activity in connection with the use of the Service and the author reserves the right to report any potentially criminal activity to appropriate law enforcement agencies.
+			The user must not transmit to or via the Service, any material that may infringe the intellectual property rights of any third party, or any defamatory, derogatory or offensive material or publication.
+			In no event shall the author of this software be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service.
+			The author reserves the right to make additions, deletions, or modification to the contents on the Service at any time without prior notice.
+			The author of this software does not warrant that the software is free of viruses or other harmful components.
+			Seren may contain links to external websites that are not provided or maintained by or in any way affiliated with the author.
+			Please note that the author does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.
+		</disclaimer>
+		<assets>
+			<icon>ico-fox-gold-final.png</icon>
+			<fanart>fanart-fox-gold-final.png</fanart>
+			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+		</assets>
+		<news>Minor bugfixes.</news>
+	</extension>
+</addon>
+
+<addon id="plugin.video.youtube" name="YouTube" version="60.8.2" provider-name="Newf276, anxdpanic, bromix">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0"/>
+        <import addon="script.module.six" version="1.11.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+        <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/startup.py" start="login"/>
+    <extension point="xbmc.python.module" library="resources/lib/"/>
+    <extension point="xbmc.addon.metadata">
+        <news>updated icon and fanart</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <forum>https://ytaddon.page.link/forum</forum>
+        <website>https://www.youtube.com</website>
+        <email>ytplugin at datanet dot ws</email>
+        <source>https://github.com/jdf76/plugin.video.youtube</source>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+    </extension>
+</addon>
+
+<addon id="repository.a4kstreaming"
+       name="a4kStreaming Repository"
+       version="1.0.0"
+       provider-name="Unknown">
+    <extension point="xbmc.addon.repository">
+        <info>https://raw.githubusercontent.com/newt-sc/a4kStreaming/master/packages/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/newt-sc/a4kStreaming/master/packages/addons.xml.crc</checksum>
+        <datadir>https://github.com/newt-sc/a4kStreaming/archive</datadir>
+        <artdir>https://github.com/newt-sc/a4kStreaming/releases/download/v0.1.0</artdir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>a4kStreaming</summary>
+        <description>a4kStreaming Repository</description>
+        <platform>all</platform>
+    </extension>
+</addon>
+
 <addon id="repository.newf" name="Newf's Kodi Repository" version="1.4" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
         <dir minversion="18.0" maxversion="18.9.0">
@@ -568,7 +993,7 @@ Rework for newf 2.0
     </extension>
 </addon>
 
-<addon id="script.extendedinfo" name="Discover-Info" version="200.0.1" provider-name="Newf276">
+<addon id="script.extendedinfo" name="OpenInfo" version="6.2.2" provider-name="A4K">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
 		<import addon="script.module.pil" version="1.1.7"/>
@@ -576,6 +1001,7 @@ Rework for newf 2.0
 		<import addon="script.module.requests" version="2.9.1"/>
 		<import addon="script.skin.helper.service" version="1.0.0"/>
 		<import addon="resource.images.studios.white" version="0.0.18"/>
+		<import addon="plugin.video.openmeta" version="1.0.0" optional="true"/>
 	</requires>
 	<extension point="xbmc.python.script" library="script.py"/>
 	<extension point="xbmc.python.pluginsource" library="plugin.py">
@@ -584,7 +1010,7 @@ Rework for newf 2.0
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
 			<item library="context.py">
-				<label>Discover-Info</label>
+				<label>OpenInfo</label>
 				<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,season) | String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,actor) | String.IsEqual(ListItem.dbtype,director)</visible>
 			</item>
 		</menu>
@@ -592,16 +1018,171 @@ Rework for newf 2.0
 	<extension point="xbmc.addon.metadata">
 		<reuselanguageinvoker>false</reuselanguageinvoker>
 		<platform>all</platform>
-		<summary>Fork of the ExtendedInfo script/OpenInfo from phil65/vitor07/A4K. Thank you all for the amazing coding work.</summary>
-		<description>This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Needs skin implementation for lot of functions and plugin.video.discover for library and player functions.</description>
+		<summary>Fork of the ExtendedInfo script from phil65</summary>
+		<description>This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Needs skin implementation for lot of functions and OpenMeta for library functions.</description>
 		<assets>
-			<icon>resources/icon.jpg</icon>
+			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
 			<screenshot>resources/screenshot1.jpg</screenshot>
 			<screenshot>resources/screenshot2.jpg</screenshot>
 			<screenshot>resources/screenshot3.jpg</screenshot>
 		</assets>
-		<news>200.0.1 Customized for Discover Addon</news>
+		<news>6.2.2 - Added ability to search using the tvdb_id for "extendedepisodeinfo"
+		6.2.1 - Fix context menu now available for widgets pointing to OpenInfo's video addon items
+		6.2.0 - Added context menu force "player select" to the play button, available via "c" and long press "enter" button
+		</news>
+	</extension>
+</addon>
+
+<addon id="service.subtitles.opensubtitles_by_opensubtitles"
+       name="OpenSubtitles.org by OpenSubtitles"
+       version="15.2.15"
+       provider-name="amet, opensubtitles">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.subtitle.module"
+             library="service.py" />
+  <extension point="xbmc.addon.metadata">
+    <summary>OpenSubtitles by OpenSubtitles.org</summary>
+    <summary lang="hr">OpenSubtitles.org podnaslovi</summary>
+    <description lang="en">Anonymously search and download subtitles for movies and TV-Series from OpenSubtitles.org without log-in. Search in 75 languages, 4.000.000+ subtitles, daily updates. </description>
+	<description lang="at">Pelis and Subtítulos TV en munches llingües, milenta de subtítulos traducíos y xubíos caldía. Descarga llibre dende la fonte, sofitu API, millones d'usuarios.</description>
+	<description lang="br">Istitloù Filmoù ha TV e meur a yezh, miliadoù a istitloù troet hag uskarget bemdez. Pellgargadenn digoust diouzh ar vammenn, skoazell an API, millionoù a implijerien.</description>
+	<description lang="ca">Subtítols de films i televisió en múltiples idiomes, milers de subtítols traduïts carregats diàriament. Descàrrega gratuïta des de la font, suport de l'API, amb milions d'usuaris.</description>
+	<description lang="cs">Titulky k filmům a seriálům v mnoha jazycích, denně tisíce nahraných přeložených titulků. Stažení zadarmo přímo od zdroje, podpora API, milióny uživatelů.</description>
+	<description lang="de">Film- und TV-Untertitel in vielen Sprachen, täglicher Upload von tausenden übersetzten Untertiteln. Freier Download von der Quelle, API-Unterstützung, Millionen Nutzer</description>
+	<description lang="el">Ταινίες και Σειρές σε όλες τις γλώσσες, χιλιάδες μεταφρασμένοι υπότιτλοι ανεβαίνουν καθημερινά, κατεβάστε δωρεάν , υποστήριξη API από εκατομμύρια χρήστες</description>
+	<description lang="eo">Filmaj kaj Televidaj subtekstoj en multaj lingvoj, miloj da tradukitaj subtekstoj ĉiutage alŝutataj. Senpaga elŝuto de fonto, API-subteno, miloj da uzantoj.</description>
+	<description lang="es">Películas y Subtítulos en diversos idiomas, miles de subtítulos traducidos subidos diariamente. Descarge gratis, soporte API, millones de usuarios.</description>
+	<description lang="et">Sadu Filmi ja TV Serjaalide subtiitrid erinevates keeltes laetakse üles igapäev. tasuta allalaadimine ja abi, rohkem kui miljon kasutajat.</description>
+	<description lang="eu">Film eta Telebista azpitituluak hizkuntza anitzetan, milaka azpititulu itzuliak igotzen dira egunero. Doan jaitsi iturburutik, API sostengua, milioika erabiltzaile.</description>
+	<description lang="fi">Tekstityksiä useilla kielillä elokuviin ja TV-Sarjoihin, tuhansia uusia tekstityksiä päivittäin, ilmainen lataus, API tuki, miljoonia käyttäjiä.</description>
+	<description lang="fr">Les sous-titres de film et téléfilm en plusieurs langues, des milliers de sous-titres traduits tous les jours. Bénéficiez de téléchargements gratuits depuis la source, du support API, une d'une communauté de millions d'utilisateurs.</description>
+	<description lang="hi">मूवी और टीवी उपशीर्षक कई भाषाओं में अनुवाद उपशीर्षक के हजारों दैनिक अपलोड की गई। मुफ्त डाउनलोड स्रोत से , एपीआई समर्थन, उपयोगकर्ताओं के लाखों लोगों की ।</description>
+	<description lang="hr">Anonimno pretraživajte i preuzimajte podnaslove za filmove i TV serije sa OpenSubtitles.org bez prijave, pretraga za 75 jezika. Dostupni milijuni podnaslova, uz svakodnevno dodavanje novih podnaslova.</description>
+	<description lang="hu">Film és TV feliratok több nyelven, naponta több ezer lefordított felirat feltöltés. Ingyenes letöltés a forrástól, API támogatás, több millió felhasználó.</description>
+	<description lang="id">Subjudul film dan serial TV dalam multibahasa, ribuan subjudul diterjemah dan diunggah setiap harinya. Pengunduhan gratis dari sumber, didukung fitur antarmuka pemrograman aplikasi, dan jutaan pengguna.</description>
+	<description lang="is">Textar fyrir myndir og sjónvarpsþ. á mörgum tungumálum, þúsundir af þýddum textum upphlaðið daglega. Frítt niðurhal frá síðu, API stuðningur, milljónir notenda.</description>
+	<description lang="it">Sottotitoli di Film e TV in più lingue,migliaia di sottotitoli tradotti caricati ogni giorno.Download gratuito,supporto API, milioni di utenti.</description>
+	<description lang="ja">映画やテレビの字幕をさまざまな言語で。毎日数多くの翻訳字幕がアップロードされています。ソースを無料ダウンロード、API 対応、数百万を超えるユーザー。</description>
+	<description lang="ka">სუბტიტრები ფილმებისა და ტვ-სთვის მრავალ ენაზე. ათასობიტ თარგმნილი სუბტიტრის ატვირთვა ყოველდღიურად. უდასო ჩამოტვირტვა წყაროდან, API მხარდაჭერა, მილიონობით მომხმარებელი</description>
+	<description lang="km">អត្ថបទរឿងសម្រាប់ ខ្សែភាពយន្ត និងកម្មវិធីទូរទស្សន៍​ ជាភាសាជាច្រើន រួមនឹងអត្ថបទរឿងបកប្រែរាប់ពាន់​រឿង​ដែល​ត្រូវបាន​អ័ពឡូដជារៀងរាល់ថ្ងៃ។ ទាញយកដោយឥតគិតថ្លៃពីប្រភពដើម គាំទ្រ API និងមានអ្នកប្រើប្រាស់រាប់លាននាក់។ </description>
+	<description lang="ko">Movie and TV Subtitles in multiple languages, thousands of translated subtitles uploaded daily. Free download from source, API support, millions of users.</description>
+	<description lang="ms">Sarikata TV dan Movie dalam pelbagai bahasa, ribuan terjemahan sarikata dimuat-naik setiap hari.Muat-turun percuma dari sumber utama, sokongan API, jutaan pengguna.</description>
+	<description lang="nl">Ondertitels voor films en tv-series in meerdere talen, dagelijks upload van duizenden vertaalde ondertitels. Gratis downloaden van de bron, API ondersteuning, miljoenen gebruikers.</description>
+	<description lang="no">Undertekster for film og TV på mange språk, med tusener av nye oversettelser hver dag. Vi har gratis nedlasting av undertekster, API-support, og mange millioner brukere.</description>
+	<description lang="pt-br">Milhares de legendas para filmes e seriados de TV, em vários idiomas, são traduzidas e enviadas diariamente. Download grátis, suporte API e milhões de usuários.</description>
+	<description lang="pl">Napisy do filmów i seriali w wielu językach. Tysiące napisów dodawanych codziennie. Darmowe pobranie, miliony użytkowników.</description>
+	<description lang="pt">Legendas de filmes e séries de TV em vários idiomas, milhares de legendas traduzidas e enviadas diariamente. Download grátis a partir da fonte, suporte API, milhões de utilizadores.</description>
+	<description lang="ro">Subtitrari pentru filme in multe limbi, mii de subtitrari traduse si încărcate in fiecare zi. Descărca gratuit de la sursă, suport API, milioane de utilizatori.</description>
+	<description lang="ru">Кино и ТВ субтитры на нескольких языках, тысячи переведенными субтитрами загружены ежедневно. Бесплатно скачать из исходных текстов, поддержка API, миллионы пользователей.</description>
+	<description lang="sk">Titulky pre filmy a TV seriály, denne nahratých tisíce titulkov preložených vo viacerých jazykoch. Sťahuj zadarmo zo zdroja, podpora API, milióny používateľov.</description>
+	<description lang="sl">Filmski in televizijski podnapisi v mnogo jezikih, na tisoče prevedenih podnapisov dnevno. Brezplačen prenos iz vira, podpora API, miljoni uporabnikov.</description>
+	<description lang="sq">Titra filmash dhe serialesh në shumë gjuhë, mijëra titra të përkthyera që vendosen çdo ditë. Shkarko nga burimi, apo nga mbështetja e API-së, miliona përdorues.</description>
+	<description lang="sr">Titlovi za filmove i TV na mnogim jezicima, hiljade prevoda okačenih svakodnevno. Besplatno skidanje sa izvora, podrška za API, milioni korisnika.</description>
+	<description lang="sv">Filmer och Tv-undertexter med olika språk, tusentals översatta undertexter uppladdade dagligen. Gratis nerladdning från källor, API support, miljoner av användare.</description>
+	<description lang="tr">Her gün eklenen, pek çok dildeki binlerce film ve dizi altyazısı. Kaynağından ücretsiz indirme, API desteği ve milyonlarca kullanıcı.</description>
+	<description lang="uz">Film va TV Taglavhalari ko'p tillarda, minglab tarjima qilingan taglavhalar har kuni tizimga yuklanadi. Bepul resursdan yuklab oling, API qo'llaydi, millionlab foydalanuvchilar.</description>
+	<description lang="zh">多语种的电影及剧集字幕，每日更新千余条翻译好的字幕。免费下载，提供API接口，已拥有上百万的用户。</description>
+    <disclaimer>Works without log-in</disclaimer>
+    <disclaimer lang="hr">Radi bez prijave</disclaimer>
+	<news>
+Improved add-on by OpenSubtitles.org
+v5.2.14 (2017-01-23)
+- Users are able to download subtitles as anonymous without authentication. Added localized descriptions, media files
+- New feature: Users are able to check for subtitles when Kodi is not playing, by using the manual search or by standing on an item and opening the subtitles search dialog (By key or by an external addon)  | @burekas
+	</news>
+    <platform>all</platform>
+	<language></language>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum>https://forum.opensubtitles.org/viewtopic.php?f=8&amp;t=15847</forum>
+    <website>http://www.opensubtitles.org</website>
+    <email>admin [at] opensubtitles {dot} org</email>
+	<assets>
+	    <icon>resources/media/os_logo_512x512.png</icon>
+	    <fanart>resources/media/os_fanart.jpg</fanart>
+		<screenshot>resources/media/screenshot_1.jpg</screenshot>
+		<screenshot>resources/media/screenshot_2.jpg</screenshot>
+		<screenshot>resources/media/screenshot_3.jpg</screenshot>
+	</assets>
+    <source>https://github.com/opensubtitles/service.subtitles.opensubtitles_by_opensubtitles</source>
+  </extension>
+</addon>
+
+<addon id="skin.estuary.leia.openmeta" version="1.0" name="Estuary OpenMeta" provider-name="newf276">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<news>
+v.1.0
+- Use with OpenMeta
+		</news>
+		<summary lang="en_GB">newf276's mod to the Estuary skin by phil65.</summary>
+		<description lang="en_GB">Various mods to Estuary, including Artist Slideshow support and ability to customize home screen and home screen widgets.</description>
+		<disclaimer lang="en_GB">This mod is only lightly supported.</disclaimer>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=333143</forum>
+		<source>https://github.com/newf276/skin.estuary.leia.openmeta</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/icon.jpg</fanart>
+			<screenshot>resources/screenshot-20170506-01.jpg</screenshot>
+			<screenshot>resources/screenshot-20170506-02.jpg</screenshot>
+			<screenshot>resources/screenshot-20170506-03.jpg</screenshot>
+			<screenshot>resources/screenshot-20170506-04.jpg</screenshot>
+			<screenshot>resources/screenshot-20170506-05.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="skin.estuary.leia.pkscout.mod" version="1.2.19" name="Estuary Leia Mod (pkscout)" provider-name="pkscout, phil65, Ichabod Fletchman">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<news>
+v.1.2.19
+- fix for how video section works when no sources are defined
+		</news>
+		<summary lang="en_GB">pkscout's mod to the Estuary skin by phil65.</summary>
+		<description lang="en_GB">Various mods to Estuary, including Artist Slideshow support and ability to customize home screen and home screen widgets.</description>
+		<disclaimer lang="en_GB">This mod is only lightly supported.</disclaimer>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=333143</forum>
+		<source>https://github.com/pkscout/skin.estuary.leia.pkscout.mod</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/icon.jpg</fanart>
+			<screenshot>resources/screenshot-20170506-01.jpg</screenshot>
+			<screenshot>resources/screenshot-20170506-02.jpg</screenshot>
+			<screenshot>resources/screenshot-20170506-03.jpg</screenshot>
+			<screenshot>resources/screenshot-20170506-04.jpg</screenshot>
+			<screenshot>resources/screenshot-20170506-05.jpg</screenshot>
+		</assets>
 	</extension>
 </addon>
 
@@ -771,6 +1352,29 @@ Rework for newf 2.0
 			<screenshot>resources/screenshot-06.jpg</screenshot>
 			<screenshot>resources/screenshot-07.jpg</screenshot>
 			<screenshot>resources/screenshot-08.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="weather.weatherbit.io" name="Weatherbit IO" version="0.0.20" provider-name="ronie">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+		<import addon="script.openweathermap.maps" version="0.2.2"/>
+		<import addon="script.module.dateutil" version="2.5.3"/>
+		<import addon="script.module.requests" version="2.18.4"/>
+	</requires>
+	<extension point="xbmc.python.weather" library="default.py"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Weather forecast from weatherbit.io</summary>
+		<description lang="en">Weather forecast provided by Weatherbit (https://weatherbit.io/)</description>
+		<language></language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE Version 2</license>
+		<forum>https://forum.kodi.tv/forumdisplay.php?fid=155</forum>
+		<source>https://gitlab.com/ronie/weather.weatherbit.io/</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
 		</assets>
 	</extension>
 </addon>
