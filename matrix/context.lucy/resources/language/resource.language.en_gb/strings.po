@@ -1,7 +1,7 @@
  # Kodi Media Center language file
 # Addon Name: lucy
 # Addon id: context.lucy
-# Addon Provider: Nixgates
+# Addon Provider: newf276
 msgid ""
 msgstr ""
 

@@ -190,9 +190,11 @@ def dispatch(params):
 
             from resources.lib.modules import player
 
-            player.lucyPlayer().play_source(
+            lucy_player = player.lucyPlayer()
+            lucy_player.play_source(
                 stream_link, item_information, resume_time=resume_time
             )
+            del lucy_player
 
         except NoPlayableSourcesException:
             try:
@@ -664,7 +666,9 @@ def dispatch(params):
     elif action == "runPlayerDialogs":
         from resources.lib.modules.player import PlayerDialogs
 
-        PlayerDialogs().display_dialog()
+        player_dialogs = PlayerDialogs()
+        player_dialogs.display_dialog()
+        del player_dialogs
 
     elif action == "authAllDebrid":
         from resources.lib.debrid.all_debrid import AllDebrid
