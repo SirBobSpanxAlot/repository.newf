@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: Skin.Seren
+# Addon Name: Skin.seren
 # Addon id: skin.seren
 # Addon Provider: newf276
 msgid ""

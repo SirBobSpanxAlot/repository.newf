@@ -58,25 +58,17 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5900"/>
 						</include>
-                            <include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.lucy/?action=moviesMyCollection&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
-                            <param name="sortby" value="title"/>
-							<param name="sortorder" value="ascending"/>
-							<param name="widget_header" value="Our Movies"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5100"/>
-						</include>
                         <include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.lucy/?action=movieTrendingRecent&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload-movies)]"/>
 							<param name="widget_header" value="Trending"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5200"/>    
+							<param name="list_id" value="5100"/>    
 						</include>
                         <include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.lucy/?action=genericEndpoint&endpoint=boxoffice&from_widget=true&mediatype=movies&reload=$INFO[Window(Home).Property(widgetreload-movies)]"/>
 							<param name="widget_header" value="Box Office Top 10"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5300"/>
+							<param name="list_id" value="5200"/>
 						</include>
 					</control>    
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -98,15 +90,15 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6900"/>
 						</include>
-                            <include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.lucy/?action=showsMyProgress&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
-							<param name="widget_header" value="Our Shows"/>
+                            <include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.video.lucy/?action=showsNextUp&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
+							<param name="widget_header" value="Next Episodes"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6100"/>
 						</include>
                         <include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.lucy/?action=genericEndpoint&amp;endpoint=watched&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
-                            <param name="widget_header" value="Most Watched"/>
+							<param name="content_path" value="plugin://plugin.video.lucy/?action=showsMyProgress&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
+                            <param name="widget_header" value="In Progress Shows"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6200"/>
 						</include>

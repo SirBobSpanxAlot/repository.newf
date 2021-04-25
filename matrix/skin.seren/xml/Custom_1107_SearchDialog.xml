@@ -18,7 +18,7 @@
 				<include>ButtonMenuList</include>
 				<content>
 					   <item>
-						<label>Search Seren</label>
+						<label>Search seren</label>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick condition="System.hasAddon(plugin.video.seren)">ActivateWindow(10025,&quot;plugin://plugin.video.seren/?action=searchMenu&amp;from_widget=false&quot;,return)</onclick>
 						<onclick condition="!System.hasAddon(plugin.video.seren)">InstallAddon(plugin.video.seren)</onclick>
