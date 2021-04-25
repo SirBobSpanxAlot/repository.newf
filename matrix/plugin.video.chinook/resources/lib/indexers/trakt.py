@@ -200,11 +200,11 @@ class TraktAPI(ApiBase):
     def __init__(self):
         self.client_id = g.get_setting(
             "trakt.clientid",
-            "0c9a30819e4af6ffaf3b954cbeae9b54499088513863c03c02911de00ac2de79",
+            "52cbe0868c5d7caa1d0f85a50ec333d655a9f469719b67df5d3cba6ce73d478f",
         )
         self.client_secret = g.get_setting(
             "trakt.secret",
-            "bf02417f27b514cee6a8d135f2ddc261a15eecfb6ed6289c36239826dcdd1842",
+            "d5575e7683a48b3e2968d6c21d19da3ba807b7a04f7ed0e803c5dfc465a1e134",
         )
         self.redirect_uri = "urn:ietf:wg:oauth:2.0:oob"
         self.access_token = g.get_setting("trakt.auth")
