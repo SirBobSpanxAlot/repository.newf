@@ -135,7 +135,7 @@
                             <width>100%</width>
                             <height>136</height>
                             <texture>white.png</texture>
-                            <colordiffuse>55000000</colordiffuse>
+                            <colordiffuse>95000000</colordiffuse>
                     </control>
                 </control>
             </itemlayout>
@@ -148,7 +148,7 @@
                         <width>100%</width>
                         <height>290</height>
                         <texture>white.png</texture>
-                        <colordiffuse>FF362e33</colordiffuse>
+                        <colordiffuse>99000000</colordiffuse>
                     </control>
 <!--                    <control type="image">-->
 <!--                        <visible>!String.IsEmpty(ListItem.Property(provider.image))</visible>-->
@@ -157,7 +157,7 @@
                     <control type="image">
                         <top>50</top>
                         <left>10</left>
-                        <width>200</width>
+                        <width>150</width>
                         <height>200</height>
                         <aspectratio>keep</aspectratio>
     <!--                    <visible>String.IsEqual($INFO[ListItem.Property(provider.image)],)|</visible>-->

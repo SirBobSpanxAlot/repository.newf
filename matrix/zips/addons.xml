@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="chinook.maintenance" version="1.0+matrix.1" name="Chinook Maintenance" provider-name="newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Chinook Maintenance</summary>
+        <description lang="en">Chinook Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://www.github.com/newf276/newf.repository/</source>
+        <news> Matrix Version 1.0 - Edited for my Chinook Addon
+        </news>
+        <assets>
+            <icon>icon.jpg</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="context.chinook" version="2.0.1+matrix.1" name="Chinook - Global Context Menu Items" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
@@ -207,6 +232,56 @@ Rework for newf 2.0
 	</extension>
 </addon>
 
+<addon id="lucy.maintenance" version="1.0+matrix.1" name="Lucy Maintenance" provider-name="newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Lucy Maintenance</summary>
+        <description lang="en">Lucy Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://www.github.com/newf276/newf.repository/</source>
+        <news> Matrix Version 1.0 - Edited for my Lucy Addon
+        </news>
+        <assets>
+            <icon>icon.jpg</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="newf.maintenance" version="1.0+matrix.1" name="Newf Maintenance" provider-name="newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Newf Maintenance</summary>
+        <description lang="en">Newf Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://www.github.com/newf276/newf.repository/</source>
+        <news> Matrix Version 1.0 - Edited for my newf Addon
+        </news>
+        <assets>
+            <icon>icon.jpg</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.audio.iheart"
        name="iHeartRadio"
        version="20.0.1"
@@ -282,81 +357,6 @@ Rework for newf 2.0
         <source>https://github.com/phil65/plugin.program.autocompletion</source>
         <assets>
             <icon>resources/icon.png</icon>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="plugin.program.lucy.cleaner" name="Lucy Maintenance" version="2.0" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Lucy Maintenance</summary>
-        <description lang="en">Lucy Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/plugin.program.lucy.cleaner/</source>
-        <news> Matrix Version 2.0 - Edited for my Lucy Addon
-        </news>
-        <assets>
-            <icon>icon.jpg</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="plugin.program.openwizard.chinook" name="Chinook Maintenance" version="1.2" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Chinook Maintenance</summary>
-        <description lang="en">Chinook Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/plugin.program.openwizard.chinook/</source>
-        <news> Matrix Version 1.0 - Edited for my chinook Addon
-        </news>
-        <assets>
-            <icon>icon.jpg</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="plugin.program.openwizard.newf" name="Newf Maintenance" version="1.2" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Newf Maintenance</summary>
-        <description lang="en">Newf Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/plugin.program.openwizard.newf/</source>
-        <news> Matrix Version 1.0 - Edited for my newf Addon
-        </news>
-        <assets>
-            <icon>icon.jpg</icon>
-            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
