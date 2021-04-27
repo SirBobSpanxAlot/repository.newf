@@ -317,7 +317,7 @@ Rework for newf 2.0
   </extension>
 </addon>
 
-<addon id="plugin.audio.tunein2021" name="TuneIn Radio" version="3.2.3+matrix" provider-name="newf276">
+<addon id="plugin.audio.tunein2021" name="TuneIn Radio" version="3.4+matrix" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
     		<import addon="script.module.kodi-six" />
@@ -4140,7 +4140,7 @@ Fixed View Types not being set
     </extension>
 </addon>
 
-<addon id="skin.chinook" version="1.0.0+matrix.1" name="Skin-Chinook" provider-name="newf276, phil65">
+<addon id="skin.chinook" version="1.1+matrix.1" name="Skin-Chinook" provider-name="newf276, phil65">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0"/>
 	</requires>
@@ -4172,7 +4172,7 @@ Fixed View Types not being set
 	</extension>
 </addon>
 
-<addon id="skin.lucy" version="1.0.0+matrix.1" name="Skin-Lucy" provider-name="newf276, phil65">
+<addon id="skin.lucy" version="1.1+matrix.1" name="Skin-Lucy" provider-name="newf276, phil65">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0"/>
 	</requires>
@@ -4204,7 +4204,7 @@ Fixed View Types not being set
 	</extension>
 </addon>
 
-<addon id="skin.newf" version="1.0.0+matrix.1" name="Skin-Newf" provider-name="newf276, phil65">
+<addon id="skin.newf" version="1.1+matrix.1" name="Skin-Newf" provider-name="newf276, phil65">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0"/>
 	</requires>
@@ -4236,7 +4236,7 @@ Fixed View Types not being set
 	</extension>
 </addon>
 
-<addon id="skin.seren" version="1.0.0+matrix.1" name="Skin-Seren" provider-name="newf276, phil65">
+<addon id="skin.seren" version="1.1+matrix.1" name="Skin-Seren" provider-name="newf276, phil65">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0"/>
 	</requires>

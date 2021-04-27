@@ -42,20 +42,20 @@ import base64			# zusätzliche url-Kodierung für addDir/router
 import resources.lib.updater 			as updater		
 from resources.lib.util_tunein2021 import *
 
-# +++++ TuneIn2021  - Addon Kodi-Version, migriert von der Plexmediaserver-Version +++++
+# +++++ tunein2021  - Addon Kodi-Version, migriert von der Plexmediaserver-Version +++++
 
-VERSION =  '1.0.0'	
-VDATE = '11.10.2020'
+VERSION =  '1.6.5'	
+VDATE = '22.04.2021'
 
 # 
 #	
 
-# (c) 2019 by Roland Scholz, newf276@gmx.de
+# (c) 2019 by Roland Scholz, rols1@gmx.de
 # 
 # 	Licensed under MIT License (MIT)
 # 	(previously licensed under GPL 3.0)
 # 	A copy of the License you find here:
-#		https://github.com/newf276/TuneIn2021/blob/master/LICENSE.md
+#		https://github.com/rols1/tunein2021/blob/master/LICENSE.md
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
 # INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
@@ -100,7 +100,7 @@ ICON_UPDATER_NEW 		= 'plugin-update-new.png'
 
 ART    		= 'art-default.png'
 ICON   		= 'icon-default.png'
-NAME		= 'TuneIn2021'
+NAME		= 'tunein2021'
 MENU_ICON 	=  	{'menu-lokale.png', 'menu-musik.png', 'menu-sport.png', 'menu-news.png',
 					 'menu-talk.png', 'menu-audiobook.png', 'menu-pod.png', 
 				}
@@ -115,8 +115,8 @@ ROOT_URL 	= 'https://tunein.com/radio/home/'
 USER_URL 	= 'https://opml.radiotime.com/Browse.ashx?c=presets&partnerId=RadioTime&username=%s'
 RECENTS_URL	= 'https://api.tunein.com/categories/recents?formats=%s&serial=%s&partnerId=RadioTime&version=3.31'
 
-REPO_NAME		 	= 'Kodi-Addon-TuneIn2021'
-GITHUB_REPOSITORY 	= 'newf276/' + REPO_NAME
+REPO_NAME		 	= 'Kodi-Addon-tunein2021'
+GITHUB_REPOSITORY 	= 'rols1/' + REPO_NAME
 REPO_URL 			= 'https://github.com/{0}/releases/latest'.format(GITHUB_REPOSITORY)
 
 # Globale Variablen für Tunein:
@@ -372,7 +372,7 @@ def Main():
 				call_update = True
 				title = L('neues Update vorhanden') +  ' - ' + L('jetzt installieren')
 				summary = L('Plugin Version:') + " " + VERSION + ', Github Version: ' + latest_version
-				# Bsp.: https://github.com/newf276/Kodi-Addon-ARDundZDF/releases/download/0.5.4/Kodi-Addon-ARDundZDF.zip
+				# Bsp.: https://github.com/rols1/Kodi-Addon-ARDundZDF/releases/download/0.5.4/Kodi-Addon-ARDundZDF.zip
 				url = 'https://github.com/{0}/releases/download/{1}/{2}.zip'.format(GITHUB_REPOSITORY, latest_version, REPO_NAME)
 				url=py2_encode(url); latest_version=py2_encode(latest_version);
 				fparams="&fparams={'url': '%s', 'ver': '%s'}" % (quote_plus(url), latest_version) 
@@ -448,6 +448,7 @@ def home(li):							# Home-Button
 #-----------------------------	
 def getMenuIcon(key):	# gibt zum key passendes Icon aus MENU_ICON zurück	
 	icon = ''			#
+	PLog("key: " + key)
 	for icon in MENU_ICON:
 		if key == 'local':
 			icon = R('menu-lokale.png')
@@ -459,9 +460,9 @@ def getMenuIcon(key):	# gibt zum key passendes Icon aus MENU_ICON zurück
 			icon = R('menu-musik.png')
 		elif key == 'sports':
 			icon = R('menu-sport.png')
-		elif key == 'News-c57922':
-			icon = R('menu-news.png')
-		elif key == 'talk':
+		#elif key == 'News-c57922':	
+		#	icon = R('menu-news.png')
+		elif key == 'News--Talk-c57922':	# 22.04.2021 News + Talk zusammengelegt
 			icon = R('menu-talk.png')
 		elif key == 'podcasts':
 			icon = R('menu-pod.png')
@@ -798,7 +799,7 @@ def GetContent(url, title, offset=0, li=''):
 		title		= stringextract('"title":', '",', index)		# Sonderbhdl. wg. "\"Sticky Fingers\" ...
 		title		= title[1:].replace('\\"', '"')	
 		subtitle	= stringextract('"subtitle":"', '"', index)		# Datum lokal
-		publishTime	= stringextract('"publishTime":"', '"', index)	# Format 2021-10-26T16:50:58
+		publishTime	= stringextract('"publishTime":"', '"', index)	# Format 2017-10-26T16:50:58
 		seoName		= stringextract('"seoName":"', '"', index)		# -> url-Abgleich
 		if '"description"' in index:
 			descr		= stringextract('"description":"', '"', index)	
@@ -1069,7 +1070,7 @@ def RequestTunein(FunctionName, url, GetOnlyHeader=None, GetOnlyRedirect=False):
 		try:																# Step 2: urllib2.Request mit Zertifikat
 			PLog("RequestTunein, step 2, called from %s" % FunctionName)
 			cafile = os.path.join("%s", "xbmc_cacert.pem") % RESOURCES_PATH # 
-			if SETTINGS.getSetting('UseSystemCertifikat') == "true":	# Bsp. "/etc/certbot/live/newf276.xxx.de/fullchain.pem"
+			if SETTINGS.getSetting('UseSystemCertifikat') == "true":	# Bsp. "/etc/certbot/live/rols1.xxx.de/fullchain.pem"
 				if os.path.exists(SETTINGS.getSetting('SystemCertifikat')) == "true":	
 					cafile = SETTINGS.getSetting('SystemCertifikat')		# Vorabtest path.exists in Main
 				
@@ -1501,7 +1502,7 @@ def get_pls(url):               # Playlist extrahieren
 			try:
 				req = Request(url)
 				cafile = os.path.join("%s", "xbmc_cacert.pem") % RESOURCES_PATH
-				if SETTINGS.getSetting('SystemCertifikat') == "true": # Bsp. "/etc/certbot/live/newf276.xxx.de/fullchain.pem"	
+				if SETTINGS.getSetting('SystemCertifikat') == "true": # Bsp. "/etc/certbot/live/rols1.xxx.de/fullchain.pem"	
 					cafile = SETTINGS.getSetting('SystemCertifikat')
 				PLog(cafile)
 				req = urlopen(req, cafile=cafile, timeout=UrlopenTimeout) 
@@ -1679,9 +1680,9 @@ def get_details(line):		# line=opml-Ergebnis im xml-Format, mittels Stringfunkti
 #-----------------------------
 # CreateTrackObject entfällt in Kodi (-> PlayAudio)
 # Codecs, Protocols ... s. Framework/api/constkit.py
-#	DirectPlayProfiles s. Archiv/TuneIn2021/00_Hinweis.txt
+#	DirectPlayProfiles s. Archiv/tunein2021/00_Hinweis.txt
 #	sid = Station-ID (für opml-Call in PlayAudio)
-# 05.12.2018 **kwargs entfernt + nach Tests wieder hinzugefügt. I.G.z. Shoutcast läuft Tunein2021 
+# 05.12.2018 **kwargs entfernt + nach Tests wieder hinzugefügt. I.G.z. Shoutcast läuft tunein2021 
 #	mit + ohne **kwargs - tested hosted Web app  3.69.1, extern Web app  3.79.0, Android App
 # 	
 # def CreateTrackObject(url, title, summary, fmt, thumb, sid, include_container=False):
@@ -1781,7 +1782,7 @@ def PlayAudio_pre(url, title, thumb, Plot, header=None, url_template=None, FavCa
 		#	aus Chrome-Analyse - siehe Chrome_1Live_Curl.txt - Wiedergabe des Streams allein reicht tunein nicht für Recent!
 		#	Custom-Url ausschließen, Bsp. sid: "u21"
 		#	
-		audience_url='https://opml.radiotime.com/Tune.ashx?audience=Tunein2021&id=%s&render=json&formats=%s&type=station&serial=%s&partnerId=RadioTime&version=3.31'
+		audience_url='https://opml.radiotime.com/Tune.ashx?audience=tunein2021&id=%s&render=json&formats=%s&type=station&serial=%s&partnerId=RadioTime&version=3.31'
 		audience_url = audience_url % (sid, Dict('load', 'formats'),Dict('load', 'serial'))
 		PLog('audience_url: ' + audience_url)
 		page, msg = RequestTunein(FunctionName='PlayAudio, audience_url', url=audience_url)
@@ -2650,7 +2651,7 @@ def SearchUpdate(title):
 	summ = ret[3]			# Changes
 	tag = ret[4]			# tag, Bsp. 029
 	
-	# Bsp.: https://github.com/newf276/Kodi-Addon-ARDundZDF/releases/download/0.5.4/Kodi-Addon-ARDundZDF.zip
+	# Bsp.: https://github.com/rols1/Kodi-Addon-ARDundZDF/releases/download/0.5.4/Kodi-Addon-ARDundZDF.zip
 	url = 'https://github.com/{0}/releases/download/{1}/{2}.zip'.format(GITHUB_REPOSITORY, latest_version, REPO_NAME)
 
 	PLog(int_lv); PLog(int_lc); PLog(latest_version); PLog(summ);  PLog(url);
@@ -2738,7 +2739,7 @@ def presentUpdate(li,start):
 # 	Rückgabe 	Bsp. 1. {'status': 1, 'hasPortNumber': 'false', 'shoutcast': 'false', 'metadata': false, error': error}
 #				Bsp. 2.	{'status': 1, 'hasPortNumber': 'true',  'shoutcast': 'true', 'error': error, 
 #						'metadata': {'contenttype': 'audio/mpeg', 'bitrate': '64', 
-#						'song': 'Nasty Habits 41 - Senza Filtro 2021'}}
+#						'song': 'Nasty Habits 41 - Senza Filtro 2017'}}
 #		
 def getStreamMeta(address):
 	PLog('getStreamMeta: ' + address)
@@ -2766,7 +2767,7 @@ def getStreamMeta(address):
 	user_agent = 'iTunes/9.1.1'
 	request.add_header('User-Agent', user_agent)
 	request.add_header('icy-metadata', 1)
-	gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1) 	# 08.10.2021 SSLContext für https://hr-youfm-live.sslcast.addradio.de
+	gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1) 	# 08.10.2017 SSLContext für https://hr-youfm-live.sslcast.addradio.de
 	gcontext.check_hostname = False
 	gcontext.verify_mode = ssl.CERT_NONE
 	
