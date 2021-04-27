@@ -4140,6 +4140,38 @@ Fixed View Types not being set
     </extension>
 </addon>
 
+<addon id="skin.a4k" version="1.1+matrix.1" name="Skin-A4K" provider-name="newf276, phil65">
+	<requires>
+		<import addon="xbmc.gui" version="5.15.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">A4K Skin by newf276</summary>
+		<summary lang="en_US">A4K Skin by newf276</summary>
+		<description lang="en_GB">A4K Skin is a modded Estuary version for use with newf 2.0 or higher. It attempts to be easy for first time Kodi users to understand and use and it integarates newf and it's Trakt Collection based on your own Trakt Account. Thank you to phil65 for his original code.</description>
+		<description lang="en_US">A4K Skin is a modded Estuary version for use with newf 2.0 or higher. It attempts to be easy for first time Kodi users to understand and use and it integarates newf and it's Trakt Collection based on your own Trakt Account. Thank you to phil65 for his original code.</description>
+		<disclaimer lang="en_GB">A4K Skin is a modded Estuary version for use with newf 2.0 or higher. Use at your own risk</disclaimer>
+		<disclaimer lang="en_US">>A4K Skin is a modded Estuary version for use with newf 2.0 or higher. Use at your own risk</disclaimer>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source>https://newf276.github.io/</source>
+		<assets>
+			<icon>icon.jpg</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+	</extension>
+</addon>
+
 <addon id="skin.chinook" version="1.1+matrix.1" name="Skin-Chinook" provider-name="newf276, phil65">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0"/>
