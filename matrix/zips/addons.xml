@@ -25,6 +25,31 @@
     </extension>
 </addon>
 
+<addon id="coho.maintenance" version="1.0+matrix.1" name="Coho Maintenance" provider-name="newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Coho Maintenance</summary>
+        <description lang="en">Coho Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://www.github.com/coho276/coho.repository/</source>
+        <news> Matrix Version 1.0 - Edited for my coho Addon
+        </news>
+        <assets>
+            <icon>icon.jpg</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="context.chinook" version="2.0.1+matrix.1" name="Chinook - Global Context Menu Items" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
@@ -94,55 +119,55 @@ Rework for chinook 2.0
 	</extension>
 </addon>
 
-<addon id="context.newf" version="2.0.1+matrix.1" name="Newf - Global Context Menu Items" provider-name="newf276">
+<addon id="context.coho" version="2.0.1+matrix.1" name="Coho - Global Context Menu Items" provider-name="coho276">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>
 	<extension point="kodi.context.item">
         <menu id="kodi.core.main">
 			<item library="quickResume.py">
-				<label>$ADDON[context.newf 32001]</label>
-				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+				<label>$ADDON[context.coho 32001]</label>
+				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
 			</item>
             <item library="shuffle.py">
-                <label>$ADDON[context.newf 32002]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
+                <label>$ADDON[context.coho 32002]</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,episode)]</visible>
             </item>
 			<item library="playFromRandomPoint.py">
-                <label>$ADDON[context.newf 32003]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+                <label>$ADDON[context.coho 32003]</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
             </item>
 			<item library="rescrape.py">
-                <label>$ADDON[context.newf 32004]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+                <label>$ADDON[context.coho 32004]</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
             </item>
 			<item library="sourceSelect.py">
-                <label>$ADDON[context.newf 32005]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+                <label>$ADDON[context.coho 32005]</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
             </item>
 			<item library="findSimilar.py">
-                <label>$ADDON[context.newf 32006]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+                <label>$ADDON[context.coho 32006]</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
             </item>
 			<item library="browseShow.py">
-                <label>$ADDON[context.newf 32007]</label>
-                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
+                <label>$ADDON[context.coho 32007]</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
             </item>
 			<item library="browseSeason.py">
-				<label>$ADDON[context.newf 32008]</label>
-				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+String.IsEqual(ListItem.dbtype,episode)</visible>
+				<label>$ADDON[context.coho 32008]</label>
+				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+String.IsEqual(ListItem.dbtype,episode)</visible>
 			</item>
 			<item library="traktManager.py">
-				<label>$ADDON[context.newf 32009]</label>
-				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.newf/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+				<label>$ADDON[context.coho 32009]</label>
+				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.coho/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
 			</item>
         </menu>
     </extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Newf - This Addon is currently in beta. Please be aware there may be bugs present</summary>
-		<summary lang="nl">Newf - Deze add-on is momenteel in beta. Let op: er kunnen bugs aanwezig zijn</summary>
-		<description lang="en">Adds Global Contextual Menu Items for Newf menu items throughout Kodi</description>
-		<description lang="ml">Voegt globale contextuele menu-items toe voor newf-menu-items in Kodi</description>
+		<summary lang="en">Coho - This Addon is currently in beta. Please be aware there may be bugs present</summary>
+		<summary lang="nl">Coho - Deze add-on is momenteel in beta. Let op: er kunnen bugs aanwezig zijn</summary>
+		<description lang="en">Adds Global Contextual Menu Items for coho menu items throughout Kodi</description>
+		<description lang="ml">Voegt globale contextuele menu-items toe voor coho-menu-items in Kodi</description>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<forum></forum>
@@ -150,15 +175,15 @@ Rework for chinook 2.0
 		<source></source>
 		<disclaimer lang="en"></disclaimer>
 		<assets>
-			<icon>ico-newf-2.jpg</icon>
-			<fanart>fanart-newf-2.jpg</fanart>
+			<icon>ico-coho-2.jpg</icon>
+			<fanart>fanart-coho-2.jpg</fanart>
 		</assets>
 		<news>
 Changelog 2.0.1:
 Fixed addon icons/fanart
 
 Changelog 2.0.0:
-Rework for newf 2.0
+Rework for coho 2.0
 		</news>
 	</extension>
 </addon>
@@ -230,56 +255,6 @@ Changelog 2.0.0:
 Rework for sockeye 2.0
 		</news>
 	</extension>
-</addon>
-
-<addon id="lucy.maintenance" version="1.0+matrix.1" name="Lucy Maintenance" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Lucy Maintenance</summary>
-        <description lang="en">Lucy Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/newf.repository/</source>
-        <news> Matrix Version 1.0 - Edited for my Lucy Addon
-        </news>
-        <assets>
-            <icon>icon.jpg</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
-<addon id="newf.maintenance" version="1.0+matrix.1" name="Newf Maintenance" provider-name="newf276">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Newf Maintenance</summary>
-        <description lang="en">Newf Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/newf276/newf.repository/</source>
-        <news> Matrix Version 1.0 - Edited for my newf Addon
-        </news>
-        <assets>
-            <icon>icon.jpg</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
 </addon>
 
 <addon id="plugin.audio.iheart"
@@ -1559,66 +1534,36 @@ Fixed View Types not being set
     </extension>
 </addon>
 
-<addon id="plugin.video.com.pornky"
-version="0.9.4.1"
-name="pornky.com"
-provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
-<requires>
-  <!-- <import addon="xbmc.python" version="3.0.0" /> -->
-  <import addon="script.module.requests" />
-  <import addon="script.module.beautifulsoup4" />
-  <import addon="script.module.six"/>
-</requires>
-<extension point="xbmc.python.pluginsource" library="main.py">
-  <provides>video</provides>
-</extension>
-<extension point="xbmc.addon.metadata">
-  <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-  <platform>all</platform>
-  <summary lang="en">pornky.com</summary>
-  <description lang="en_GB">pornky.com video plugin for Kodi.</description>
-  <disclaimer lang="en_GB">License GPLv3. Software is provided 'as is' without warranty of any kind, either express or implied, including, but not limited to, the implied warranties of fitness for a purpose, or the warranty of non-infringement.</disclaimer>
-  <description lang="cs_CZ">pornky.com video plugin pro Kodi.</description>
-  <disclaimer lang="cs_CZ">Licence GPLv3. Software je poskytován „tak, jak je“, bez jakékoli záruky, ať výslovné nebo předpokládané, včetně, ale nikoli výhradně, předpokládaných záruk způsobilosti pro určitý účel nebo záruky neporušení práv.</disclaimer>
-  <assets>
-    <icon>icon.jpg</icon>
-    <fanart>fanart.jpg</fanart>
-  </assets>
-  <email>fr33p0rt@protonmail.com</email>
-  <news>Improved Python 3 compatibility, settings restructured, options to suppress category and video preview, reproducible build, video path calculation update</news>
-</extension>
-</addon>
-
-<addon id="plugin.video.newf" version="2.0.19+matrix.1" name="Newf" provider-name="newf276">
+<addon id="plugin.video.coho" version="2.0.19+matrix.1" name="Coho" provider-name="coho276">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.future" version="0.18.2+matrix.1"/>
         <import addon="script.module.requests" version="2.22.0+matrix.1" />
         <import addon="plugin.video.youtube" version="6.8.10+matrix.1"/>
         <import addon="script.module.beautifulsoup4" version="4.9.3+matrix.1"/>
-        <import addon="context.newf" version="2.0.1+matrix.1"/>
+        <import addon="context.coho" version="2.0.1+matrix.1"/>
         <import addon="script.module.inputstreamhelper" version="0.5.2+matrix.1"/>
         <import addon="script.module.myconnpy" version="1.1.7"/>
     </requires>
-    <extension point="xbmc.python.pluginsource" library="newf.py">
+    <extension point="xbmc.python.pluginsource" library="coho.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.service" library="service.py"/>
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <summary lang="en">Newf - Modular Multi-source Addon</summary>
-        <description lang="en">Newf is a modular provider based, cloud service streaming software that is tightly
-            interwoven with Trakt. Newf provides the freedom to view media from a single menu system from service
+        <summary lang="en">Coho - Modular Multi-source Addon</summary>
+        <description lang="en">Coho is a modular provider based, cloud service streaming software that is tightly
+            interwoven with Trakt. Coho provides the freedom to view media from a single menu system from service
             providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
         </description>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <forum/>
-        <website>https://github.com/newf276/plugin.video.newf</website>
-        <source>https://github.com/newf276/plugin.video.newf</source>
+        <website>https://github.com/coho276/plugin.video.coho</website>
+        <source>https://github.com/coho276/plugin.video.coho</source>
         <disclaimer lang="en">
             Last updated: September 09, 2019.
-            The information contained within the newf software (the "Service") is for general information purposes
+            The information contained within the coho software (the "Service") is for general information purposes
             only.
             The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
             assume responsibility for any material provided by any external services.
@@ -1639,14 +1584,14 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
             at any time without prior notice.
             The author of this software does not warrant that the software is free of viruses or other harmful
             components.
-            newf may contain links to external websites that are not provided or maintained by or in any way affiliated
+            coho may contain links to external websites that are not provided or maintained by or in any way affiliated
             with the author.
             Please note that the author does not guarantee the accuracy, relevance, timeliness, or completeness of any
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>ico-newf-2.jpg</icon>
-            <fanart>fanart-newf-2.jpg</fanart>
+            <icon>ico-coho-2.jpg</icon>
+            <fanart>fanart-coho-2.jpg</fanart>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
@@ -1835,7 +1780,7 @@ Changelog 2.0.2:
 Force table re-fresh is sync database fails to rebuild when updating
 
 Changelog 2.0.1:
-Fix last_meta_update value to reflect new newf version
+Fix last_meta_update value to reflect new coho version
 
 Changleog 2.0.0:
 
@@ -1873,7 +1818,7 @@ Automated resolving now more reliable
 OMDB API implemented
 Feedback provided at scrape if no providers are found
 Feedback provided at scrape if no debrid providers are setup
-Debrid account status now visible from newf settings
+Debrid account status now visible from coho settings
 
 
 Changelog 1.6.10:
@@ -1933,7 +1878,7 @@ Fixed MyFiles for All Debrid
 Seperated cloud services within MyFiles
 
 Changelog 1.6.3:
-Fixed backwards compatibility for older newf list urls
+Fixed backwards compatibility for older coho list urls
 Movie titles now confirm against IMDB before scrape
 Stop triggering Oauth refresh on 401 errors
 Next up sort style now requires Trakt Auth
@@ -1966,7 +1911,7 @@ Complete re-work of the standard playlist building (removes building playlist wi
 Re-work of My Files module to reduce spaghetti
 Re-work of resolver module to reduce spaghetti
 New Custom Windows Still Watching/Play Next
-Added update support for newf Themes
+Added update support for coho Themes
 Removed support for UpNext addon
 Lists are now synced to the trakt database
 More work on player.py module, better bookmark identification and playback marking
@@ -2064,11 +2009,11 @@ Changelog 1.3.1:
 Fixed delay when resuming items
 Fixed issues with missing theme variables in tools module
 Lowered RD request timeout
-Improved newf's ability to detect moment playback has started
+Improved coho's ability to detect moment playback has started
 Improved handeling of accented text in Premiumize resolver
 
 Changelog 1.3.0:
-newfs skins renamed to "Themes" to try avoid confusion with Kodi skins
+cohos skins renamed to "Themes" to try avoid confusion with Kodi skins
 Fixed issue displaying show seasons where season numbering does not start from 1 eg BBC Horizon
 Added Flatten Seasons setting
 Small improvements to player module
@@ -2100,7 +2045,7 @@ Added confirmation at clearing of torrent cache
 Added confirmation at clearing of search history
 Removed multiline source select setting as it is no longer required
 Setting "Hide Low Quality Items" renamed to "Hide Common Undesirable Items"
-Setting "Check for newf Updates" renamed to "Notify Me About Available Updates"
+Setting "Check for coho Updates" renamed to "Notify Me About Available Updates"
 Removal of orphaned files
 Restructuring of some folders
 Fixed duplicate removal process removing debrid duplicates
@@ -2147,7 +2092,7 @@ Further adjustments of background overlay to better suit brighter fanart images
 Changelog 1.0.18:
 Added Overlay to custom windows
 Added re-worked versions of artwork
-newf Fanart now applies to all items that are missing fanart
+coho Fanart now applies to all items that are missing fanart
 
 Changelog 1.0.17:
 Adjust poster size in Source Select
@@ -2162,7 +2107,7 @@ Local torrent database restructued to increase speeds and handling of entries
 Increased visibility of selected item in source select view
 Fixed hosters providers not scraping episodes
 Hosters now display the release title of the source if available
-Re-work of newf artwork
+Re-work of coho artwork
 
 Changelog 1.0.14:
 Fixed Shuffle Play
@@ -2189,7 +2134,7 @@ Fixed Hiding show from episode items
 
 Changelog 1.0.9:
 Fixed Date Display issue with Up Next notification
-Menu caching is now optional within newf settings, defaulted to On
+Menu caching is now optional within coho settings, defaulted to On
 Show year meta information now gathered from Trakt instead of TVDB (meta missing on some titles)
 Changes to search menu to provide better usability
 Increasesd title identification
@@ -2223,7 +2168,7 @@ Rollback changes to initial playlist creation due to issues with skin widgets
 
 Changelog 1.0.4:
 Added workaround for getSources api call
-Fixed more URL issues in newf.py breaking play style
+Fixed more URL issues in coho.py breaking play style
 
 Changelog 1.0.3:
 Fixed issue cloud scraping for movie items caused by URL changes
@@ -2240,10 +2185,10 @@ Fix issues with list style source select and URL changes
 Fixed date display in list style source select window
 
 Changelog 1.0.0:
-Removed Building Playlist process, newf now moves straight to scraping and fills in the playlist in the background
+Removed Building Playlist process, coho now moves straight to scraping and fills in the playlist in the background
 Re-worked smartplay module
-Moving forward, newf's versioning should now match semantic versioning
-Complete restructure of actionArgs for newf API endpoints
+Moving forward, coho's versioning should now match semantic versioning
+Complete restructure of actionArgs for coho API endpoints
 Fixed issues with trakt manager when in a mixed episode list
 Fixed Trakt Sync failing with exceptionally large libraries
 
@@ -2284,7 +2229,7 @@ Fixed missing settings check for Local Torrent Cache inspection.
 Fixed CM options not showing if context menu addon not installed
 
 Changelog 0.2.35:
-newf now utilizes Kodi Repository dateutil package
+coho now utilizes Kodi Repository dateutil package
 
 Changelog 0.2.34:
 Cleaned up logging
@@ -2301,8 +2246,8 @@ Fixed issue with hide SD removing cloud files
 
 Changelog 0.2.31:
 Fixed issue with un-aired episodes being added to playlist after smartplay speedup
-newf now confirms TMDB year information with IMDB prior to scraping
-Fixed issues with newf identifying sources from the users premiumize cloud
+coho now confirms TMDB year information with IMDB prior to scraping
+Fixed issues with coho identifying sources from the users premiumize cloud
 
 Changelog 0.2.30:
 Fixed dictionary key issue for show items in smartPlay modules created with new workaround
@@ -2317,7 +2262,7 @@ Fixed issue with ADDON_NAME variable change
 Changelog 0.2.27:
 Adjusted RD cache inspection to allow multiple video files within a single movie item
 Adjust RD movie resolving to pull largest file out of torrent item
-newf now polls Kodi for supported video containers instead of hardcoding
+coho now polls Kodi for supported video containers instead of hardcoding
 Fixed key error when marking episode as watched in local database
 Added settings cache dictionary to reduce Kodi's logging of "trying to load setting definitions from old format..."
 Cleaned up addon logging
@@ -2340,7 +2285,7 @@ Speed Increase for playlist building
 
 
 Changelog 0.2.24:
-Fixed issue with None value for newf_version entry of trakt database
+Fixed issue with None value for coho_version entry of trakt database
 
 Changelog 0.2.23:
 Added workaround to combat file extraction error while obtaining GMT timezone information
@@ -2397,7 +2342,7 @@ Fixed language filter for New Shows menu
 Networks now utilise the Trakt shows/Popular API endpoint
 Reduced meta refresh check timeout to 2 hours
 Next Up now utilises the trakt sync database to identify the next episode to watch
-Added database versioning, database can now be flushed and upgraded/downgraded as required by newf
+Added database versioning, database can now be flushed and upgraded/downgraded as required by coho
 
 Changelog 0.2.15:
 Fixed genre capitalization
@@ -2413,8 +2358,8 @@ Fixed Unaired episodes showing as aired
 
 Changelog 0.2.12:
 Fixed Next menu item for show Years
-Re-added ability for newf to display un-aired episodes if Hide Unaired is unchecked
-Added automatic checks and prompt for newf updates
+Re-added ability for coho to display un-aired episodes if Hide Unaired is unchecked
+Added automatic checks and prompt for coho updates
 Force check for episodes in season episode menus if hide unaired is disabled
 Stopped trakt sync from attempting to update user information if user is not authorised with trakt
 
@@ -2549,7 +2494,7 @@ Adjust custom providers so installs can be requested from external addons (with 
 Added Hide SD quality option to settings
 TVDB images now filter by language code (statically set to english for the interim)
 Multiple Language String Fixes
-Added fix for newf scrobbling items twice
+Added fix for coho scrobbling items twice
 Added ability for providers to override provider display names
 Next Up now filters items if they are the first episode in the series and have previously been completed
 Added Show Networks to Discover TV Shows
@@ -2615,7 +2560,7 @@ Added try except in zfile module to handle if file is already in byte form
 
 Changelog 0.1.27
 Added delay to setViewType call
-Added setting to disable setting viewTypes with newf
+Added setting to disable setting viewTypes with coho
 Removed idle, closeAllDialogs, added closeOkDialog, added closeBusyDialog
 Removed busy dialog stalling after failure to find sources
 
@@ -2630,7 +2575,7 @@ Trakt lists sorting now ignores 'The '
 Removed title appends to follow more closely to Kodi standards, another method of showing play percentage must be met
 Fixed Trakt dates for episode items
 Added Studio to metadata
-newf now appends next season to current playlist during playback instead of after
+coho now appends next season to current playlist during playback instead of after
 Removed references to now defunct OMNIConnect Addon
 Added Re-scrape cm item to episode items
 Fixed and optimised list pagination
@@ -2642,7 +2587,7 @@ Release titles are now deaccented and encoded with utf-8 to prevent unicode erro
 Fixed Ghost providers occuring if a provider was no longer available in a updated version of a provider package.
 Fixed TVDB module creating an artwork URL if no artwork is available
 Added token refresh lock to the TVDB module to stop instances of the class spawning mass refresh requests
-Massively reduced chance Kodi will drop newf's settings
+Massively reduced chance Kodi will drop coho's settings
 Fixed Real Debrid post request making a get request after token refresh
 Custom Provider module now uses Zfile module to accomodate zipfile module bug on Android devices
 
@@ -2785,6 +2730,36 @@ Adjusted Manual Caching display string
 Fixed View Types not being set
 </news>
     </extension>
+</addon>
+
+<addon id="plugin.video.com.pornky"
+version="0.9.4.1"
+name="pornky.com"
+provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
+<requires>
+  <!-- <import addon="xbmc.python" version="3.0.0" /> -->
+  <import addon="script.module.requests" />
+  <import addon="script.module.beautifulsoup4" />
+  <import addon="script.module.six"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+  <platform>all</platform>
+  <summary lang="en">pornky.com</summary>
+  <description lang="en_GB">pornky.com video plugin for Kodi.</description>
+  <disclaimer lang="en_GB">License GPLv3. Software is provided 'as is' without warranty of any kind, either express or implied, including, but not limited to, the implied warranties of fitness for a purpose, or the warranty of non-infringement.</disclaimer>
+  <description lang="cs_CZ">pornky.com video plugin pro Kodi.</description>
+  <disclaimer lang="cs_CZ">Licence GPLv3. Software je poskytován „tak, jak je“, bez jakékoli záruky, ať výslovné nebo předpokládané, včetně, ale nikoli výhradně, předpokládaných záruk způsobilosti pro určitý účel nebo záruky neporušení práv.</disclaimer>
+  <assets>
+    <icon>icon.jpg</icon>
+    <fanart>fanart.jpg</fanart>
+  </assets>
+  <email>fr33p0rt@protonmail.com</email>
+  <news>Improved Python 3 compatibility, settings restructured, options to suppress category and video preview, reproducible build, video path calculation update</news>
+</extension>
 </addon>
 
 <addon id="plugin.video.playlistloader" name="Playlist Loader" version="1.0.3+matrix" provider-name="Forked by Publish3r">
@@ -4204,7 +4179,7 @@ Fixed View Types not being set
 	</extension>
 </addon>
 
-<addon id="skin.newf" version="1.1+matrix.1" name="Skin-Newf" provider-name="newf276, phil65">
+<addon id="skin.coho" version="1.1+matrix.1" name="Skin-Coho" provider-name="coho276, phil65">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0"/>
 	</requires>
@@ -4219,16 +4194,16 @@ Fixed View Types not being set
 		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">newf Skin by newf276</summary>
-		<summary lang="en_US">newf Skin by newf276</summary>
-		<description lang="en_GB">newf Skin is a modded Estuary version for use with newf 2.0 or higher. It attempts to be easy for first time Kodi users to understand and use and it integarates newf and it's Trakt Collection based on your own Trakt Account. Thank you to phil65 for his original code.</description>
-		<description lang="en_US">newf Skin is a modded Estuary version for use with newf 2.0 or higher. It attempts to be easy for first time Kodi users to understand and use and it integarates newf and it's Trakt Collection based on your own Trakt Account. Thank you to phil65 for his original code.</description>
-		<disclaimer lang="en_GB">newf Skin is a modded Estuary version for use with newf 2.0 or higher. Use at your own risk</disclaimer>
-		<disclaimer lang="en_US">>newf Skin is a modded Estuary version for use with newf 2.0 or higher. Use at your own risk</disclaimer>
+		<summary lang="en_GB">Coho Skin by coho276</summary>
+		<summary lang="en_US">Coho Skin by coho276</summary>
+		<description lang="en_GB">Coho Skin is a modded Estuary version for use with coho 2.0 or higher. It attempts to be easy for first time Kodi users to understand and use and it integarates coho and it's Trakt Collection based on your own Trakt Account. Thank you to phil65 for his original code.</description>
+		<description lang="en_US">Coho Skin is a modded Estuary version for use with coho 2.0 or higher. It attempts to be easy for first time Kodi users to understand and use and it integarates coho and it's Trakt Collection based on your own Trakt Account. Thank you to phil65 for his original code.</description>
+		<disclaimer lang="en_GB">Coho Skin is a modded Estuary version for use with coho 2.0 or higher. Use at your own risk</disclaimer>
+		<disclaimer lang="en_US">>Coho Skin is a modded Estuary version for use with coho 2.0 or higher. Use at your own risk</disclaimer>
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
-		<source>https://newf276.github.io/</source>
+		<source>https://coho276.github.io/</source>
 		<assets>
 			<icon>icon.jpg</icon>
 			<fanart>fanart.jpg</fanart>
@@ -4298,5 +4273,30 @@ Fixed View Types not being set
 			<fanart>fanart.jpg</fanart>
 		</assets>
 	</extension>
+</addon>
+
+<addon id="sockeye.maintenance" version="1.0+matrix.1" name="Sockeye Maintenance" provider-name="newf276">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">sockeye Maintenance</summary>
+        <description lang="en">sockeye Maintenance offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://www.github.com/newf276/newf.repository/</source>
+        <news> Matrix Version 1.0 - Edited for my sockeye Addon
+        </news>
+        <assets>
+            <icon>icon.jpg</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>
 </addons>
