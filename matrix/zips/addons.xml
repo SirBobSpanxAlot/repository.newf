@@ -1754,7 +1754,7 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
     </extension>
 </addon>
 
-<addon id="repository.newf" name="Newf's Kodi Repository" version="1.4" provider-name="newf276">
+<addon id="repository.newf" name="Newf's Kodi Repository" version="1.5" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
         <dir minversion="18.0" maxversion="18.9.0">
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/leia/zips/addons.xml</info>
@@ -1771,15 +1771,10 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
             <datadir>https://github.com/newt-sc/a4kStreaming/archive</datadir>
             <artdir>https://github.com/newt-sc/a4kStreaming/releases/download/v0.1.0</artdir>
         </dir>
-		<dir minversion="18.0" maxversion="18.9.0">
+		<dir minversion="18.0">
 			<info compressed="false">https://raw.githubusercontent.com/nixgates/nixgates/master/packages/leia/addons.xml</info>
 			<checksum>https://raw.githubusercontent.com/nixgates/nixgates/master/packages/leia/addons.xml.md5</checksum>
 			<datadir zip="true">https://raw.githubusercontent.com/nixgates/nixgates/master/packages/leia/</datadir>
-		</dir>
-		<dir minversion="18.9.0">
-			<info compressed="false">https://raw.githubusercontent.com/nixgates/nixgates/master/packages/matrix/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/nixgates/nixgates/master/packages/matrix/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/nixgates/nixgates/master/packages/matrix/</datadir>
 		</dir>
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/newt-sc/a4kSubtitles/master/packages/addons.xml</info>
