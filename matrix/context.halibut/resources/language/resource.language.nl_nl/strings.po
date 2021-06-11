@@ -1,6 +1,6 @@
 # Addon Name: halibut
 # Addon id: context.halibut
-# Addon Provider: halibut276
+# Addon Provider: newf276
 msgid ""
 msgstr ""
 

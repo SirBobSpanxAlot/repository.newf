@@ -17,8 +17,6 @@ from resources.lib.modules.exceptions import SkinNotFoundException
 from resources.lib.modules.globals import g
 from resources.lib.modules.zip_manager import ZipManager
 
-migrate_db_lock = threading.Lock()
-
 DEFAULT_SKIN_NAME = "coho Default"
 
 schema = {
@@ -34,7 +32,7 @@ schema = {
             ]
         ),
         "table_constraints": ["UNIQUE(skin_name)"],
-        "default_seed": [[DEFAULT_SKIN_NAME, "1.0.1", "coho276", "1", None, None]],
+        "default_seed": [[DEFAULT_SKIN_NAME, "1.0.1", "newf276", "1", None, None]],
     }
 }
 
@@ -45,7 +43,7 @@ class SkinManager(Database, ZipManager):
     """
 
     def __init__(self):
-        super(SkinManager, self).__init__(g.SKINS_DB_PATH, schema, migrate_db_lock)
+        super(SkinManager, self).__init__(g.SKINS_DB_PATH, schema)
         ZipManager.__init__(self)
         # This is a list of default skins that may not be overwritten
         self.coho_skins = [DEFAULT_SKIN_NAME]
@@ -200,7 +198,7 @@ class SkinManager(Database, ZipManager):
             return tools.compare_version_numbers(
                 skin_info["version"], remote_meta["version"]
             )
-        except:
+        except Exception:
             g.log(
                 "Failed to obtain remote meta information for skin: {}".format(
                     skin_info["skin_name"]

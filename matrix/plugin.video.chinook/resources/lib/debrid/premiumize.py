@@ -22,7 +22,7 @@ class Premiumize:
     Wrapper to handle calls to Premiumize API
     """
     client_id = "288300453"
-    client_secret = "2jw9suzfdue2t7eq46"
+    client_secret = ""
 
     def __init__(self):
         self.headers = {
@@ -355,7 +355,8 @@ class Premiumize:
         else:
             hosters["premium"]["premiumize"] = []
 
-    def is_service_enabled(self):
+    @staticmethod
+    def is_service_enabled():
         """
         Check to confirm api is enabled in chinook
         :return:
@@ -372,4 +373,4 @@ class Premiumize:
         :return: True if premium else false
         :rtype: bool
         """
-        return self.account_info()["premium_until"] > time.time()
+        return self.account_info().get("premium_until", 0) > time.time()
