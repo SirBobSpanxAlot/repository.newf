@@ -177,14 +177,14 @@
     </extension>
 </addon>
 
-<addon id="repository.newf" name="Newf's Kodi Repository" version="2.2" provider-name="newf276">
+<addon id="repository.newf" name="Newf's Kodi Repository" version="2.3" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
-        <dir minversion="18.0" maxversion="18.9.0">
+        <dir minversion="18.0">
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/leia/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/newf276/repository.newf/master/leia/zips/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/newf276/repository.newf/master/leia/zips/</datadir>
 		</dir>
-		<dir minversion="18.9.0">
+		<dir minversion="18.9">
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/matrix/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/newf276/repository.newf/master/matrix/zips/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/newf276/repository.newf/master/matrix/zips/</datadir>
