@@ -1,7 +1,0 @@
-CHANGE HISTORY 	Kodi-Addon-TuneIn2021 (previously plugin for Plexmediaserver)
-
-
-01.01.2021 -Version 1.0.0	Matrix-Adaption: change xbmc.translatePath -> 
-			xbmcvfs.translatePath via try/except.
-			Matrix-Adaption in modul util_tunein2021: set xbmc.LOGNOTICE/xbmc.LOGINFO
-			dependent on PY2/PY3. 
