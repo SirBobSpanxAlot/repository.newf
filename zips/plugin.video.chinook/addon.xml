@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.chinook" version="2.1.0" name="chinook" provider-name="newf276">
+<addon id="plugin.video.chinook" version="2.1.1" name="Chinook" provider-name="newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -16,8 +16,8 @@
     <extension point="xbmc.service" library="service.py"/>
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <summary lang="en">chinook - Modular Multi-source Addon</summary>
-        <description lang="en">chinook is a modular provider based, cloud service streaming software that is tightly
+        <summary lang="en">Chinook - Modular Multi-source Addon</summary>
+        <description lang="en">Chinook is a modular provider based, cloud service streaming software that is tightly
             interwoven with Trakt. chinook provides the freedom to view media from a single menu system from service
             providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
         </description>
@@ -62,6 +62,16 @@
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
         </assets>
         <news>
+            Changelog 2.1.1
+            Fix RD losing auth issue
+            Improve OAUTH refresh flow edge case coverage for Trakt and TVDB
+            Re-implement retry on db lock during sql execution
+            Fix an issue with GlobalLock run_once exiting too early
+            Fix several shows views on demand insertion of missing data
+            Fix movies genres on demand insertion of missing data
+            Update season episode count after episode milling (fixes seasons showing incorrectly as watched)
+            Fix minimum size filter
+
             Changelog 2.1.0
             Major re-work of metadata updates and merging
             Fix air dates not being updated

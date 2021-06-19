@@ -50,7 +50,7 @@
     </extension>
 </addon>
 
-<addon id="context.chinook" version="2.0.2" name="chinook - Global Context Menu Items" provider-name="newf276">
+<addon id="context.chinook" version="2.0.2" name="Chinook - Global Context Menu Items" provider-name="newf276">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 	</requires>
@@ -95,8 +95,8 @@
         </menu>
     </extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">chinook - This Addon is currently in beta. Please be aware there may be bugs present</summary>
-		<summary lang="nl">chinook - Deze add-on is momenteel in beta. Let op: er kunnen bugs aanwezig zijn</summary>
+		<summary lang="en">Chinook - This Addon is currently in beta. Please be aware there may be bugs present</summary>
+		<summary lang="nl">Chinook - Deze add-on is momenteel in beta. Let op: er kunnen bugs aanwezig zijn</summary>
 		<description lang="en">Adds Global Contextual Menu Items for chinook menu items throughout Kodi</description>
 		<description lang="ml">Voegt globale contextuele menu-items toe voor chinook-menu-items in Kodi</description>
 		<platform>all</platform>
@@ -442,7 +442,7 @@ Rework for sockeye 2.0
     </extension>
 </addon>
 
-<addon id="plugin.video.chinook" version="2.1.0" name="chinook" provider-name="newf276">
+<addon id="plugin.video.chinook" version="2.1.1" name="Chinook" provider-name="newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -459,8 +459,8 @@ Rework for sockeye 2.0
     <extension point="xbmc.service" library="service.py"/>
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <summary lang="en">chinook - Modular Multi-source Addon</summary>
-        <description lang="en">chinook is a modular provider based, cloud service streaming software that is tightly
+        <summary lang="en">Chinook - Modular Multi-source Addon</summary>
+        <description lang="en">Chinook is a modular provider based, cloud service streaming software that is tightly
             interwoven with Trakt. chinook provides the freedom to view media from a single menu system from service
             providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
         </description>
@@ -505,6 +505,16 @@ Rework for sockeye 2.0
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
         </assets>
         <news>
+            Changelog 2.1.1
+            Fix RD losing auth issue
+            Improve OAUTH refresh flow edge case coverage for Trakt and TVDB
+            Re-implement retry on db lock during sql execution
+            Fix an issue with GlobalLock run_once exiting too early
+            Fix several shows views on demand insertion of missing data
+            Fix movies genres on demand insertion of missing data
+            Update season episode count after episode milling (fixes seasons showing incorrectly as watched)
+            Fix minimum size filter
+
             Changelog 2.1.0
             Major re-work of metadata updates and merging
             Fix air dates not being updated
@@ -757,7 +767,7 @@ Rework for sockeye 2.0
     </extension>
 </addon>
 
-<addon id="plugin.video.coho" version="2.1.0" name="Coho" provider-name="newf276">
+<addon id="plugin.video.coho" version="2.1.1" name="Coho" provider-name="newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -776,7 +786,7 @@ Rework for sockeye 2.0
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <summary lang="en">Coho - Modular Multi-source Addon</summary>
         <description lang="en">Coho is a modular provider based, cloud service streaming software that is tightly
-            interwoven with Trakt. Coho provides the freedom to view media from a single menu system from service
+            interwoven with Trakt. coho provides the freedom to view media from a single menu system from service
             providers of the users choosing. Please Note: This addon requires the use of a compatible cloud service.
         </description>
         <platform>all</platform>
@@ -820,6 +830,16 @@ Rework for sockeye 2.0
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
         </assets>
         <news>
+            Changelog 2.1.1
+            Fix RD losing auth issue
+            Improve OAUTH refresh flow edge case coverage for Trakt and TVDB
+            Re-implement retry on db lock during sql execution
+            Fix an issue with GlobalLock run_once exiting too early
+            Fix several shows views on demand insertion of missing data
+            Fix movies genres on demand insertion of missing data
+            Update season episode count after episode milling (fixes seasons showing incorrectly as watched)
+            Fix minimum size filter
+
             Changelog 2.1.0
             Major re-work of metadata updates and merging
             Fix air dates not being updated
@@ -1072,37 +1092,7 @@ Rework for sockeye 2.0
     </extension>
 </addon>
 
-<addon id="plugin.video.com.pornky"
-version="0.9.4.1"
-name="pornky.com"
-provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
-<requires>
-  <!-- <import addon="xbmc.python" version="3.0.0" /> -->
-  <import addon="script.module.requests" />
-  <import addon="script.module.beautifulsoup4" />
-  <import addon="script.module.six"/>
-</requires>
-<extension point="xbmc.python.pluginsource" library="main.py">
-  <provides>video</provides>
-</extension>
-<extension point="xbmc.addon.metadata">
-  <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-  <platform>all</platform>
-  <summary lang="en">pornky.com</summary>
-  <description lang="en_GB">pornky.com video plugin for Kodi.</description>
-  <disclaimer lang="en_GB">License GPLv3. Software is provided 'as is' without warranty of any kind, either express or implied, including, but not limited to, the implied warranties of fitness for a purpose, or the warranty of non-infringement.</disclaimer>
-  <description lang="cs_CZ">pornky.com video plugin pro Kodi.</description>
-  <disclaimer lang="cs_CZ">Licence GPLv3. Software je poskytován „tak, jak je“, bez jakékoli záruky, ať výslovné nebo předpokládané, včetně, ale nikoli výhradně, předpokládaných záruk způsobilosti pro určitý účel nebo záruky neporušení práv.</disclaimer>
-  <assets>
-    <icon>icon.jpg</icon>
-    <fanart>fanart.jpg</fanart>
-  </assets>
-  <email>fr33p0rt@protonmail.com</email>
-  <news>Improved Python 3 compatibility, settings restructured, options to suppress category and video preview, reproducible build, video path calculation update</news>
-</extension>
-</addon>
-
-<addon id="plugin.video.halibut" version="2.1.0" name="Halibut" provider-name="newf276">
+<addon id="plugin.video.halibut" version="2.1.1" name="Halibut" provider-name="newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -1165,6 +1155,16 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
         </assets>
         <news>
+            Changelog 2.1.1
+            Fix RD losing auth issue
+            Improve OAUTH refresh flow edge case coverage for Trakt and TVDB
+            Re-implement retry on db lock during sql execution
+            Fix an issue with GlobalLock run_once exiting too early
+            Fix several shows views on demand insertion of missing data
+            Fix movies genres on demand insertion of missing data
+            Update season episode count after episode milling (fixes seasons showing incorrectly as watched)
+            Fix minimum size filter
+
             Changelog 2.1.0
             Major re-work of metadata updates and merging
             Fix air dates not being updated
@@ -1439,7 +1439,7 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
   </extension>
 </addon>
 
-<addon id="plugin.video.sockeye" version="2.1.0" name="Sockeye" provider-name="newf276">
+<addon id="plugin.video.sockeye" version="2.1.1" name="Sockeye" provider-name="newf276">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -1502,6 +1502,16 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
         </assets>
         <news>
+            Changelog 2.1.1
+            Fix RD losing auth issue
+            Improve OAUTH refresh flow edge case coverage for Trakt and TVDB
+            Re-implement retry on db lock during sql execution
+            Fix an issue with GlobalLock run_once exiting too early
+            Fix several shows views on demand insertion of missing data
+            Fix movies genres on demand insertion of missing data
+            Update season episode count after episode milling (fixes seasons showing incorrectly as watched)
+            Fix minimum size filter
+
             Changelog 2.1.0
             Major re-work of metadata updates and merging
             Fix air dates not being updated
@@ -1754,7 +1764,7 @@ provider-name="fr33p0rt (fr33p0rt@protonmail.com)">
     </extension>
 </addon>
 
-<addon id="repository.newf" name="Newf's Kodi Repository" version="1.1" provider-name="newf276">
+<addon id="repository.newf" name="Newf's Kodi Repository" version="1.2" provider-name="newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/zips/addons.xml</info>
