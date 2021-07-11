@@ -1,6 +1,6 @@
 # Addon Name: halibut
 # Addon id: plugin.video.halibut
-# Addon Provider: newf276
+# Addon Provider: Nixgates
 msgid ""
 msgstr ""
 

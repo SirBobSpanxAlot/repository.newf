@@ -19,7 +19,7 @@ msgstr ""
 # Kodi Media Center language file
 # Addon Name: halibut
 # Addon id: plugin.video.halibut
-# Addon Provider: newf276
+# Addon Provider: Nixgates
 #: /resources/lib/gui/homeMenu.py:11
 msgctxt "#30000"
 msgid "Discover Movies"

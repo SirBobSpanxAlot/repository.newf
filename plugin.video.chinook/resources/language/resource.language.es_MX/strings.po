@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: chinook
 # Addon id: plugin.video.chinook
-# Addon Provider: newf276
+# Addon Provider: Nixgates
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"

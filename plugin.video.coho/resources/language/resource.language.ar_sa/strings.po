@@ -19,7 +19,7 @@ msgstr ""
 # Kodi Media Center language file
 # Addon Name: coho
 # Addon id: plugin.video.coho
-# Addon Provider: newf276
+# Addon Provider: Nixgates
 #: /resources/lib/gui/homeMenu.py:11
 msgctxt "#30000"
 msgid "Discover Movies"

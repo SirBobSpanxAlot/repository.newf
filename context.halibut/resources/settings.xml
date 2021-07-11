@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+
+    <!-- General -->
+    <category label="30009">
+        <setting id="context.halibut.quickResume" type="bool" label="30000" default="true"/>
+        <setting id="context.halibut.shuffle" type="bool" label="30001" default="true"/>
+        <setting id="context.halibut.playFromRandomPoint" type="bool" label="30002" default="true"/>
+        <setting id="context.halibut.rescrape" type="bool" label="30003" default="true"/>
+        <setting id="context.halibut.sourceSelect" type="bool" label="30004" default="true"/>
+        <setting id="context.halibut.findSimilar" type="bool" label="30005" default="true"/>
+        <setting id="context.halibut.browseShow" type="bool" label="30006" default="true"/>
+        <setting id="context.halibut.browseSeason" type="bool" label="30007" default="true"/>
+        <setting id="context.halibut.traktManager" type="bool" label="30008" default="true"/>        
+    </category>
+</settings>

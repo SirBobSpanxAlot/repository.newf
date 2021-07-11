@@ -1,6 +1,6 @@
 # Addon Name: sockeye
 # Addon id: plugin.video.sockeye
-# Addon Provider: newf276
+# Addon Provider: Nixgates
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"

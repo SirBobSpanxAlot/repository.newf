@@ -32,7 +32,7 @@ schema = {
             ]
         ),
         "table_constraints": ["UNIQUE(skin_name)"],
-        "default_seed": [[DEFAULT_SKIN_NAME, "1.0.1", "newf276", "1", None, None]],
+        "default_seed": [[DEFAULT_SKIN_NAME, "1.0.1", "Nixgates", "1", None, None]],
     }
 }
 

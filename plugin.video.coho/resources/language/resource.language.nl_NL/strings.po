@@ -1,6 +1,6 @@
 # Addon Name: coho
 # Addon id: plugin.video.coho
-# Addon Provider: newf276
+# Addon Provider: Nixgates
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
