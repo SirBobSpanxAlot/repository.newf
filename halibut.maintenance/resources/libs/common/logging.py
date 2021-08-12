@@ -78,20 +78,20 @@ def check_log():
             if str(line[1:11]) >= str(keep):
                 break
             x += 1
-        halibutile = lines[x:]
-        tools.write_to_file(CONFIG.WIZLOG, '\n'.join(halibutile))
+        newfile = lines[x:]
+        tools.write_to_file(CONFIG.WIZLOG, '\n'.join(newfile))
     elif CONFIG.CLEANWIZLOGBY == '1':  # By Size
         maxsize = CONFIG.MAXWIZSIZE[int(float(CONFIG.CLEANSIZE))]*1024
         if os.path.getsize(CONFIG.WIZLOG) >= maxsize:
-            start = len(lines)/2
-            halibutile = lines[start:]
-            tools.write_to_file(CONFIG.WIZLOG, '\n'.join(halibutile))
+            start = int(len(lines)/2)
+            newfile = lines[start:]
+            tools.write_to_file(CONFIG.WIZLOG, '\n'.join(newfile))
     elif CONFIG.CLEANWIZLOGBY == '2':  # By Lines
         maxlines = CONFIG.MAXWIZLINES[int(float(CONFIG.CLEANLINES))]
         if len(lines) > maxlines:
             start = len(lines) - int(maxlines/2)
-            halibutile = lines[start:]
-            tools.write_to_file(CONFIG.WIZLOG, '\n'.join(halibutile))
+            newfile = lines[start:]
+            tools.write_to_file(CONFIG.WIZLOG, '\n'.join(newfile))
     CONFIG.set_setting('nextwizcleandate', next)
 
 
