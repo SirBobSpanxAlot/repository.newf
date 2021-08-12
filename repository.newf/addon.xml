@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.newf" name="Newf's Kodi Repository" version="1.4" provider-name="newf276">
+<addon id="repository.newf" name="Newf's Kodi Repository" version="1.5" provider-name="Newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/zips/addons.xml</info>
@@ -12,9 +12,9 @@
             <artdir>https://github.com/newt-sc/a4kStreaming/releases/download/v0.1.0</artdir>
         </dir>
 		<dir minversion="18.0">
-			<info compressed="false">https://raw.githubusercontent.com/nixgates/nixgates/master/packages/leia/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/nixgates/nixgates/master/packages/leia/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/nixgates/nixgates/master/packages/leia/</datadir>
+			<info compressed="false">https://raw.githubusercontent.com/nixgates/nixgates/master/repo/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/nixgates/nixgates/master/repo/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/nixgates/nixgates/master/repo/zips/</datadir>
 		</dir>
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/newt-sc/a4kSubtitles/master/packages/addons.xml</info>
@@ -59,8 +59,6 @@
         <platform>all</platform>
         <assets>
             <icon>icon.jpg</icon>
-        </assets>
-        <assets>
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>

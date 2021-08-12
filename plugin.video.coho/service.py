@@ -55,14 +55,15 @@ try:
     g.wait_for_abort(30)  # Sleep for a half a minute to allow widget loads to complete.
     while not monitor.abortRequested():
         xbmc.executebuiltin(
-            'RunPlugin("plugin://plugin.video.coho/?action=runMaintenance&action_args=updateCheck")'
-        )
-        xbmc.executebuiltin(
             'RunPlugin("plugin://plugin.video.coho/?action=runMaintenance")'
         )
         if not g.wait_for_abort(15):  # Sleep to make sure tokens refreshed during maintenance
             xbmc.executebuiltin(
                 'RunPlugin("plugin://plugin.video.coho/?action=syncTraktActivities")'
+            )
+        if not g.wait_for_abort(15):  # Sleep to make sure we don't possibly clobber settings
+            xbmc.executebuiltin(
+                'RunPlugin("plugin://plugin.video.coho/?action=updateLocalTimezone")'
             )
         if g.wait_for_abort(60 * randint(13, 17)):
             break
