@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.unfussy.helper" name="Unfussy Helper" version="0.5.0" provider-name="louis">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="default.py" />
+	<extension point="xbmc.python.pluginsource" library="plugin.py" />
+	<extension point="xbmc.service" library="service.py" start="login" />
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="contextitem.py">
+			<label>30273</label>
+			<visible>
+				  !String.IsEmpty(ListItem.FolderPath) 
+				+ String.StartsWith(ListItem.FolderPath,plugin)
+				+ String.IsEmpty(ListItem.Duration)
+				+ !String.IsEqual(ListItem.Label,..)
+			</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Unfussy Helper Script</summary>
+		<description lang="en">Helper script to provide features and functions to the Unfussy skin</description>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<source>https://github.com/louisbraun/script.unfussy.helper</source>
+		<email>louis.braun@gmx.de</email>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/icon.png</fanart>
+		</assets>
+	</extension>
+</addon>
