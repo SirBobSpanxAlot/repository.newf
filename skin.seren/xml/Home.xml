@@ -53,18 +53,22 @@
 						<pagecontrol>5010</pagecontrol>
 						<include content="WidgetListCategories">
 							<param name="content_path" value="library://video/movies/"/>
-							<param name="additional_tvshow_items" value="true"/>
+							<param name="additional_movie_items" value="true"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5900"/>
 						</include>
                         <include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.seren/?action=query&id=ls500043928&type=list"/>
-                            <param name="widget_header" value="Movies"/>
+							<param name="content_path" value="plugin://plugin.video.seren/?action=movieTrendingRecent&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload-movies)]"/>
+							<param name="widget_header" value="Trending"/>
 							<param name="widget_target" value="videos"/>
-                            <param name="sortby" value="title"/>
-							<param name="sortorder" value="ascending"/>
-							<param name="list_id" value="5100"/>
+							<param name="list_id" value="5100"/>    
+						</include>
+                        <include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.seren/?action=genericEndpoint&endpoint=boxoffice&from_widget=true&mediatype=movies&reload=$INFO[Window(Home).Property(widgetreload-movies)]"/>
+							<param name="widget_header" value="Box Office Top 10"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5200"/>
 						</include>
 					</control>    
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -86,13 +90,17 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6900"/>
 						</include>
-                        <include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.seren/?action=query&id=ls500043991&type=list"/>
-                            <param name="widget_header" value="Shows"/>
+                            <include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.video.seren/?action=showsNextUp&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
+							<param name="widget_header" value="Next Episodes"/>
 							<param name="widget_target" value="videos"/>
-                            <param name="sortby" value="title"/>
-							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="6100"/>
+						</include>
+                        <include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.seren/?action=showsMyProgress&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
+                            <param name="widget_header" value="In Progress Shows"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6200"/>
 						</include>
                     </control>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -858,22 +866,20 @@
 					<content>
 						<item>
 							<label>TV Shows</label>
-							<onclick>ActivateWindow(Videos,"plugin://plugin.video.seren/?action=query&id=ls500043991&type=list",return)</onclick>
+							<onclick>ActivateWindow(Videos,"plugin://plugin.video.seren/?action=showsMyCollection&from_widget=true",return)</onclick>
 							<property name="menu_id">$NUMBER[6000]</property>
 							<thumb>icons/sidemenu/tv.png</thumb>
 							<property name="id">tvshows</property>
-                            <param name="sortby" value="title"/>
-							<param name="sortorder" value="ascending"/>
 							<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
 						</item>
 						<item>
 							<label>Movies</label>
-                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.seren/?action=query&id=ls500043928&type=list",return)</onclick>
+                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.seren/?action=moviesMyWatchlist&from_widget=true",return)</onclick>
 							<property name="menu_id">$NUMBER[5000]</property>
-							<thumb>icons/sidemenu/movies.png</thumb>
-							<property name="id">movies</property>
                             <param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>
+							<thumb>icons/sidemenu/movies.png</thumb>
+							<property name="id">movies</property>
 							<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
 						</item>
 						<item>

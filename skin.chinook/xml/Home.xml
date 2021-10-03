@@ -874,7 +874,7 @@
 						</item>
 						<item>
 							<label>Movies</label>
-                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.chinook/?action=moviesMyCollection&from_widget=true",return)</onclick>
+                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.chinook/?action=moviesMyWatchlist&from_widget=true",return)</onclick>
 							<property name="menu_id">$NUMBER[5000]</property>
                             <param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>

@@ -1,3 +1,0 @@
-[B]1.0.0[/B] 16 March 2021
-
-• Initial commit and modified from Kodi 19 Final release version of Estuary Skin.
