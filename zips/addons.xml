@@ -494,7 +494,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.chinook" version="2.1.5" name="Chinook" provider-name="Nixgates">
+<addon id="plugin.video.chinook" version="2.1.6" name="Chinook" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -893,7 +893,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.coho" version="2.1.5" name="Coho" provider-name="Nixgates">
+<addon id="plugin.video.coho" version="2.1.6" name="Coho" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -1292,7 +1292,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.halibut" version="2.1.5" name="Halibut" provider-name="Nixgates">
+<addon id="plugin.video.halibut" version="2.1.6" name="Halibut" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -1691,7 +1691,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.sockeye" version="2.1.5" name="Sockeye" provider-name="Nixgates">
+<addon id="plugin.video.sockeye" version="2.1.6" name="Sockeye" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>

@@ -611,11 +611,11 @@ class TraktAPI(ApiBase):
     def _load_settings(self):
         self.client_id = g.get_setting(
             "trakt.clientid",
-            "bae4a4d72e01ec2806ed99786227d519c85eee44769ccb533d57ede188af9ab2",
+            "0c9a30819e4af6ffaf3b954cbeae9b54499088513863c03c02911de00ac2de79",
         )
         self.client_secret = g.get_setting(
             "trakt.secret",
-            "428142ea9046ab4f129ef55e7e66878578cac3936d34804b891286defde1e6f5",
+            "bf02417f27b514cee6a8d135f2ddc261a15eecfb6ed6289c36239826dcdd1842",
         )
         self.access_token = g.get_setting("trakt.auth")
         self.refresh_token = g.get_setting("trakt.refresh")

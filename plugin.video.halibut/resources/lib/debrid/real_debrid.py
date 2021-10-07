@@ -25,7 +25,7 @@ RD_EXPIRY_KEY = "rd.expiry"
 RD_SECRET_KEY = "rd.secret"
 RD_CLIENT_ID_KEY = "rd.client_id"
 RD_USERNAME_KEY = "rd.username"
-RD_AUTH_CLIENT_ID = "MPCF6OE5DLDM2"
+RD_AUTH_CLIENT_ID = "X245A4XAIBGVM"
 
 
 class RealDebrid:
