@@ -494,7 +494,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.chinook" version="2.1.6" name="Chinook" provider-name="Nixgates">
+<addon id="plugin.video.chinook" version="2.1.7" name="Chinook" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -893,7 +893,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.coho" version="2.1.6" name="Coho" provider-name="Nixgates">
+<addon id="plugin.video.coho" version="2.1.7" name="Coho" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -1292,7 +1292,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.halibut" version="2.1.6" name="Halibut" provider-name="Nixgates">
+<addon id="plugin.video.halibut" version="2.1.7" name="Halibut" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -1691,7 +1691,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.sockeye" version="2.1.6" name="Sockeye" provider-name="Nixgates">
+<addon id="plugin.video.sockeye" version="2.1.7" name="Sockeye" provider-name="Nixgates">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="script.module.future" version="0.17.1"/>
@@ -2095,7 +2095,7 @@
     </extension>
 </addon>
 
-<addon id="repository.newf" name="Newf's Kodi Repository" version="2.0" provider-name="Newf276">
+<addon id="repository.newf" name="Newf's Kodi Repository" version="2.1" provider-name="Newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/zips/addons.xml</info>
