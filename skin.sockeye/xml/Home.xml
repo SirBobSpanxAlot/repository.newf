@@ -96,9 +96,9 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6100"/>
 						</include>
-                        <include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.sockeye/?action=showsMyProgress&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
-                            <param name="widget_header" value="In Progress Shows"/>
+                        <include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.video.sockeye/?action=myUpcomingEpisodes&amp;from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
+                            <param name="widget_header" value="Upcoming Episodes"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6200"/>
 						</include>
@@ -866,7 +866,7 @@
 					<content>
 						<item>
 							<label>TV Shows</label>
-							<onclick>ActivateWindow(Videos,"plugin://plugin.video.sockeye/?action=showsMyCollection&from_widget=true",return)</onclick>
+							<onclick>ActivateWindow(Videos,"plugin://plugin.video.sockeye/?action=showsMyWatchlist&from_widget=false",return)</onclick>
 							<property name="menu_id">$NUMBER[6000]</property>
 							<thumb>icons/sidemenu/tv.png</thumb>
 							<property name="id">tvshows</property>
@@ -874,7 +874,7 @@
 						</item>
 						<item>
 							<label>Movies</label>
-                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.sockeye/?action=moviesMyWatchlist&from_widget=true",return)</onclick>
+                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.sockeye/?action=moviesMyWatchlist&from_widget=false",return)</onclick>
 							<property name="menu_id">$NUMBER[5000]</property>
                             <param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>
