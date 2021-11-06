@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Skin.Chinook
-# Addon id: skin.chinook
-# Addon Provider: newf276
+# Addon Name: Chinook
+# Addon id: skin.Chinook
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"

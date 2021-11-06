@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.newf" name="Newf's Kodi Repository" version="2.2" provider-name="Newf276">
+<addon id="repository.newf" name="Newf's Kodi Repository" version="2.3" provider-name="Newf276">
     <extension point="xbmc.addon.repository" name="Newf's Kodi Repository">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/newf276/repository.newf/master/zips/addons.xml</info>
@@ -52,10 +52,50 @@
             <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
         </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/repo/zips/</datadir>
+        </dir>
+		<dir minversion="18.0" maxversion="18.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/leia/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/leia/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/leia/zips/</datadir>
+        </dir>
+        <dir minversion="18.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/matrix/zips/</datadir>
+        </dir>
+        <dir minversion="18.0">
+			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.venom/main/repo/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/123Venom/repository.venom/main/repo/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.venom/main/repo/zips/</datadir>
+		</dir>
+		<dir minversion="18.0" maxversion="18.9.0">
+			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.venom/main/leia/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/123Venom/repository.venom/main/leia/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.venom/main/leia/zips/</datadir>
+		</dir>
+		<dir minversion="18.9.0">
+			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.venom/main/matrix/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/123Venom/repository.venom/main/matrix/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.venom/main/matrix/zips/</datadir>
+		</dir>
+        <dir minversion="18.0" maxversion="18.9.0">
+			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.metahandler/main/leia/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/123Venom/repository.metahandler/main/leia/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.metahandler/main/leia/zips/</datadir>
+		</dir>
+		<dir minversion="18.9.0">
+			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.metahandler/main/matrix/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/123Venom/repository.metahandler/main/matrix/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.metahandler/main/matrix/zips/</datadir>
+		</dir>
 </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Kodi Matrix Repossitory</summary>
-        <description>The official home of Newf's Matrix Repsository</description>
+        <summary>Kodi Repossitory</summary>
+        <description>The official home of Newf's Repsository</description>
         <platform>all</platform>
         <assets>
             <icon>icon.jpg</icon>

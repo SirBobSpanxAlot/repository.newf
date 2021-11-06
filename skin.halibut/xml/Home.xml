@@ -96,9 +96,9 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6100"/>
 						</include>
-                        <include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.halibut/?action=showsMyProgress&from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
-                            <param name="widget_header" value="In Progress Shows"/>
+                        <include content="WidgetListSquare">
+							<param name="content_path" value="plugin://plugin.video.halibut/?action=myUpcomingEpisodes&amp;from_widget=true&reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]"/>
+                            <param name="widget_header" value="Upcoming Episodes"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6200"/>
 						</include>
@@ -339,16 +339,13 @@
 						<include content="WidgetListCategories" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://tv/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="12900"/>
 						</include>
-
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://channels/tv/*?view=lastplayed"/>
 							<param name="sortby" value="lastplayed"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31016]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="12200"/>
 						</include>
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
@@ -356,7 +353,6 @@
 							<param name="sortby" value="date"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31015]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="12300"/>
 							<param name="label" value="$INFO[ListItem.ChannelName]"/>
 							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
@@ -420,7 +416,6 @@
 						<include content="WidgetListCategories" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://radio/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="13900"/>
 						</include>
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
@@ -428,7 +423,6 @@
 							<param name="sortby" value="lastplayed"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31018]"/>
-							<param name="widget_target" value="files"/>
 							<param name="list_id" value="13200"/>
 						</include>
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
@@ -436,7 +430,6 @@
 							<param name="sortby" value="date"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31015]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="13300"/>
 							<param name="label" value="$INFO[ListItem.ChannelName]"/>
 							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
@@ -874,7 +867,7 @@
 						</item>
 						<item>
 							<label>Movies</label>
-                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.halibut/?action=moviesMyWatchlist&from_widget=true",return)</onclick>
+                            <onclick>ActivateWindow(Videos,"plugin://plugin.video.halibut/?action=moviesMyWatchlist&from_widget=false",return)</onclick>
 							<property name="menu_id">$NUMBER[5000]</property>
                             <param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>

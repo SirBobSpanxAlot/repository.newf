@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Skin.coho
+# Addon Name: coho
 # Addon id: skin.coho
-# Addon Provider: coho276
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
@@ -386,7 +386,7 @@ msgstr "Rediger noder"
 
 msgctxt "#31118"
 msgid "Enter add-on browser"
-msgstr "Gå til add-on browcoho"
+msgstr "Gå til add-on browseren"
 
 msgctxt "#31119"
 msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
@@ -482,7 +482,7 @@ msgstr "Du har endnu ikke konfigureret PVR. For at benytte PVR skal du vælge et
 
 msgctxt "#31144"
 msgid "Enter add-on browser"
-msgstr "Gå til add-on browcoho"
+msgstr "Gå til add-on browseren"
 
 msgctxt "#31145"
 msgid "Search add-ons"
@@ -506,7 +506,7 @@ msgstr "Tilfældige musikvideoer"
 
 msgctxt "#31153"
 msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
-msgstr "Du har ikke installeret nogen add-ons af denne type. Gå til add-on-browcoho for at downloade add-ons skabt af vores community."
+msgstr "Du har ikke installeret nogen add-ons af denne type. Gå til add-on-browseren for at downloade add-ons skabt af vores community."
 
 msgctxt "#31154"
 msgid "Press OK to switch between locations"

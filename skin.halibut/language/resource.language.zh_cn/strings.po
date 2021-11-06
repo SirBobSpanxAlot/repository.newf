@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Skin.halibut
+# Addon Name: halibut
 # Addon id: skin.halibut
-# Addon Provider: halibut276
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"

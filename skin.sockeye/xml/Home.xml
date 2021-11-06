@@ -339,16 +339,13 @@
 						<include content="WidgetListCategories" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://tv/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="12900"/>
 						</include>
-
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://channels/tv/*?view=lastplayed"/>
 							<param name="sortby" value="lastplayed"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31016]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="12200"/>
 						</include>
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
@@ -356,7 +353,6 @@
 							<param name="sortby" value="date"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31015]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="12300"/>
 							<param name="label" value="$INFO[ListItem.ChannelName]"/>
 							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
@@ -420,7 +416,6 @@
 						<include content="WidgetListCategories" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://radio/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="13900"/>
 						</include>
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
@@ -428,7 +423,6 @@
 							<param name="sortby" value="lastplayed"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31018]"/>
-							<param name="widget_target" value="files"/>
 							<param name="list_id" value="13200"/>
 						</include>
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
@@ -436,7 +430,6 @@
 							<param name="sortby" value="date"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31015]"/>
-							<param name="widget_target" value="pvr"/>
 							<param name="list_id" value="13300"/>
 							<param name="label" value="$INFO[ListItem.ChannelName]"/>
 							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
@@ -866,7 +859,7 @@
 					<content>
 						<item>
 							<label>TV Shows</label>
-							<onclick>ActivateWindow(Videos,"plugin://plugin.video.sockeye/?action=showsMyWatchlist&from_widget=false",return)</onclick>
+							<onclick>ActivateWindow(Videos,"plugin://plugin.video.sockeye/?action=showsMyCollection&from_widget=true",return)</onclick>
 							<property name="menu_id">$NUMBER[6000]</property>
 							<thumb>icons/sidemenu/tv.png</thumb>
 							<property name="id">tvshows</property>

@@ -247,7 +247,7 @@
 		<param name="sortby"></param>
 		<param name="visible">True</param>
 		<param name="sortorder">ascending</param>
-		<param name="widget_limit">55</param>
+		<param name="widget_limit">75</param>
 		<param name="fallback_icon">DefaultAudio.png</param>
 		<definition>
 			<include content="CategoryLabel">

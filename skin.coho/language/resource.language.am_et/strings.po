@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Skin.coho
+# Addon Name: coho
 # Addon id: skin.coho
-# Addon Provider: coho276
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
