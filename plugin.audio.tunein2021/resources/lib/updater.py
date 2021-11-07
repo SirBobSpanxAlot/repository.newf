@@ -45,7 +45,7 @@ FEED_URL = 'https://github.com/{0}/releases.atom'
 ################################################################################
 TITLE = 'TuneIn2021'
 REPO_NAME		 	= 'Kodi-Addon-TuneIn2021'
-GITHUB_REPOSITORY 	= 'newf276/' + REPO_NAME
+GITHUB_REPOSITORY 	= 'rols1/' + REPO_NAME
 
 ################################################################################
 
@@ -53,7 +53,7 @@ GITHUB_REPOSITORY 	= 'newf276/' + REPO_NAME
 def get_latest_version():
 	PLog('get_latest_version:')
 	try:
-		# https://github.com/newf276/Kodi-Addon-ARDundZDF/releases.atom
+		# https://github.com/rols1/Kodi-Addon-ARDundZDF/releases.atom
 		# releases.atom liefert Releases-Übersicht als xml-Datei 
 		release_feed_url = ('https://github.com/{0}/releases.atom'.format(GITHUB_REPOSITORY))
 		PLog(release_feed_url)

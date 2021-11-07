@@ -2,8 +2,8 @@
 <settings>
    <category label="248">
 		<setting label="248" type="select"  
-		values="English/en/en_US|English/en/en_GB/Author: newf276/100%|German/de/de_DE/Author: rols/100%"  
-		default="English/en/en_US" id="language"/>
+		values="Afrikaans/af|Albanian/sq|Amharic/am|Arabic/ar/ar_SA|Armenian/hy|Azerbaijani/az|Basque/eu|Bengali/bn|Bulgarian/bg|Catalan/ca|Chinese (Hong Kong)/zh_HK|Chinese (Taiwan)/zh_TW|Chinese/zh_CN|Croatian/hr|Czech/cs/cs_CZ|Danish/da/da_DK/Author: Tommy Mikkelsen/85%|Dutch/nl/nl_NL|English/en/en_US|English/en/en_GB/Author: rs/100%|Estonian/et|Filipino/fil|Finnish/fi/fi_FI|French (Canada)/fr_CA|French/fr/fr_FR/Author: Joyfik/76%|Galician/gl|Georgian/ka|German/de/de_DE/Author: rols1/100%| Greek/el/el_GR|Gujarati/gu|Hebrew/iw|Hindi/hi/hi_IN|Hungarian/hu/hu_HU|Icelandic/is|Indonesian/id|Italian/it/it_IT/Author: Alessio79/79%|Japanese/ja/ja_JP|Kannada/kn|Kazakh/kk|Khmer/km|Korean/ko/ko_KR|Kyrgyz/ky|Lao/lo|Latvian/lv|Lithuanian/lt|Macedonian/mk|Malay/ms|Malayalam/ml|Marathi/mr|Mongolian/mn|Myanmar (Burmese)/my|Nepali/ne|Norwegian/no|Persian/fa|Polish/pl/pl_PL/Author: Przemo/79%|Portuguese (Brazil)/pt|Portuguese (Portugal)/pt_PT|Punjabi/pa|Romanian/ro|Russian/ru/ru_RU|Serbian/sr|Sinhala/si|Slovak/sk|Slovenian/sl|Spanish (Latin America)/es_419|Spanish (Spain)/es/es_ES/Author: Patrizia/100%|Swahili/sw|Swedish/sv|Tamil/ta|Telugu/te|Thai/th|Turkish/tr/tr_TR|Ukrainian/uk/uk_UA/Author: Vlad/35%|Urdu/ur|Uzbek/uz|Vietnamese/vi|Zulu/zu"  
+		default="German/de/de_DE" id="language"/>
 	</category>
 		
    <category label="TuneIn">
@@ -14,7 +14,7 @@
 	
     <category label="16000">
 		<setting label="30110" type="bool" id="PlusAAC"  default="true"/>
-		<setting label="30111" type="select" values="15|25|50|100|500"  id="maxPageContent" default="75"/>
+		<setting label="30111" type="select" values="15|25|50|100|500"  id="maxPageContent" default="25"/>
 		<setting label="30112" type="select" values="0|32|64|96|128|192|256|320" id="minBitrate" default="0"/>
 		<setting label="30113"  type="select" values="1|2|3|4|5|6|10|20" id="maxStreamsPerStation" default="3"/>
 		<setting label="30114" type="bool" id="UseFavourites" />
@@ -30,7 +30,7 @@
 	
 	<category label="30200">
     		<setting label="30201" type="bool" id="pref_info_debug" default="false"/>
-		<setting label="30202"  type="bool"  id="InfoUpdate" default="false" />
+		<setting label="30202"  type="bool"  id="InfoUpdate" default="true" />
 		<setting type="sep"/>
 		<setting label="30203" type="bool" id="StartWithFavourits" default="false" />
 		<setting label="30204" type="bool" id="StartWithMyRadioStations" default="false" />
